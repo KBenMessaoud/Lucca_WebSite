@@ -1,1 +1,36 @@
-<p>logo works!</p>
+<div class="toolbar" role="banner">
+    <img
+      width="150"
+      alt="Lucca"
+      src="./assets/logo-lucca.png"
+    />
+    <div class="spacer"></div>
+    <div class="icon-container">
+      <img
+        width="57"
+        alt="Paramètres"
+        src="./assets/param.png"
+        class="icon-param"
+        (click)="toggleSettingsMenu()"
+      />
+      <div class="settings-menu" *ngIf="showSettingsMenu">
+        <label for="siteLocation">Site:</label>
+        <select id="siteLocation" [(ngModel)]="selectedSiteLocation">
+          <option value="Nantes">Nantes</option>
+          <option value="Paris">Paris</option>
+          <option value="Marseille">Marseille</option>
+          <option value="Barcelone">Barcelone</option>
+          <option value="Genève">Genève</option>
+        </select>
+        <br>
+        <label for="language">Langue:</label>
+        <select id="language" [(ngModel)]="selectedLanguage">
+          <option value="Fr">Fr</option>
+          <option value="En">En</option>
+          <option value="Es">Es</option>
+          <option value="De">De</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  

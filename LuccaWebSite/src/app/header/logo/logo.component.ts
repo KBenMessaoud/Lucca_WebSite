@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./logo.component.scss']
 })
 export class LogoComponent {
+  showSettingsMenu = false;
+  selectedSiteLocation = 'Nantes';
+  selectedLanguage = 'Fr';
 
+  toggleSettingsMenu() {
+    this.showSettingsMenu = !this.showSettingsMenu;
+  }
 }
