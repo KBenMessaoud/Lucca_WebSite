@@ -1,12 +1,28 @@
 .personne {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    width: 150px; // Ajustez la taille du carré selon vos besoins
-    height: 150px;
-    background-color: orange;
-    color: rgb(7, 6, 6); // Couleur du texte
-    padding: 10px; // Espace à l'intérieur du carré
-    border-radius: 5px; // Coins arrondis pour un aspect de carré
-  }
-  
+  position: absolute; // Positionne l'élément de façon absolue par rapport à son conteneur
+  bottom: 20px; // Marge de 20 pixels depuis le bas
+  right: 20px; // Marge de 20 pixels depuis la droite
+  width: 175px; // Largeur de 175 pixels
+  height: 175px; // Hauteur de 175 pixels
+  background-color: white; // Couleur de fond avec une certaine transparence (à modifier 
+  color: orangered; // Couleur du texte en orangered
+  padding: 10px; // Espace intérieur de 10 pixels
+  border-radius: 20px; // Coins arrondis pour un aspect de carré
+  display: flex; // Utilise le modèle de boîte flexible
+  flex-direction: column; // Aligne les éléments verticalement
+  align-items: center; // Centre le contenu verticalement
+  justify-content: flex-end; // Texte en bas de la page 
+}
+
+.nombre-present {
+  font-size: 130px; // Ajustez la taille de la police 
+  font-weight: bold; // Texte en gras
+  margin-bottom: 45px; // Supprime la marge par défaut pour aligner le texte
+  color: orangered; // Couleur du texte en orangered
+}
+
+.personnes-text {
+  font-size: 38px; // Ajustez la taille de la police pour "Personnes sur le site"
+  font-weight: bold; // Texte en gras
+  color: rgb(19, 29, 53); // Couleur du texte en RGB
+}
