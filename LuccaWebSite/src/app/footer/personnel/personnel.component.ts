@@ -42,7 +42,7 @@ export class PersonnelComponent implements OnInit {
       .then(data => {
         const totalUsers = data.data.length;
 
-        // Une fois que vous avez le nombre total d'utilisateurs, vous pouvez vérifier le nombre d'absents
+        // Une fois que nous avons le nombre total d'utilisateurs, nous pouvons maintenant vérifier le nombre d'absents
         this.getAbsentsCount(totalUsers);
       })
       .catch(error => {
