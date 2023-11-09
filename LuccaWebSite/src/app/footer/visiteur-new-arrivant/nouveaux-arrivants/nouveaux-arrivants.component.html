@@ -1,0 +1,13 @@
+<div class="nouveaux-arrivants-container">
+    <div class="nouveaux-arrivants-title">Nouveaux Arrivants</div>
+    <ul class="nouveaux-arrivants-list">
+      <li class="nouveaux-arrivants-item" *ngFor="let arrivant of nouveauxArrivants; let i = index" [class.active]="i === currentSlideIndex">
+        {{ arrivant.nom }}
+      </li>
+    </ul>
+    <!-- Pagination -->
+    <div class="pagination">
+      <span class="dot" *ngFor="let arrivant of nouveauxArrivants; let i = index" [class.active]="i === currentSlideIndex"></span>
+    </div>
+  </div>
+  

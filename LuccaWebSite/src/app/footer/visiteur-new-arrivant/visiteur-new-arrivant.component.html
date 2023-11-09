@@ -1,2 +1,2 @@
-<app-nouveaux-arrivants></app-nouveaux-arrivants>
-<app-visiteurs></app-visiteurs>
+<app-visiteurs *ngIf="showVisiteurs"></app-visiteurs>
+<app-nouveaux-arrivants *ngIf="!showVisiteurs"></app-nouveaux-arrivants>
