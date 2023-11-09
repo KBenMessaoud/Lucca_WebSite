@@ -1,1 +1,31 @@
-<p>parametres works!</p>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@700&display=swap');
+    </style>
+
+<div class="icon-container">
+	<img
+	  width="57"
+	  alt="Paramètres"
+	  src=""
+	  (click)="toggleSettingsMenu()"
+	/>
+	<div class="settings-menu" *ngIf="showSettingsMenu">
+	  <label for="siteLocation">Site:</label>
+	  <select id="siteLocation" [(ngModel)]="selectedSiteLocation" (change)="onOptionSelected($event)">
+		<option value="Nantes">Nantes</option>
+		<option value="Nantes2">Nantes2</option>
+		<option value="Paris">Paris</option>
+		<option value="Marseille">Marseille</option>
+		<option value="Barcelone">Barcelone</option>
+		<option value="Genève">Genève</option>
+	  </select>
+	  <br>
+	  <label for="language">Langue:</label>
+	  <select id="language" [(ngModel)]="selectedLanguage">
+		<option value="Fr">Fr</option>
+		<option value="En">En</option>
+		<option value="Es">Es</option>
+		<option value="De">De</option>
+	  </select>
+	</div>
+  </div>
