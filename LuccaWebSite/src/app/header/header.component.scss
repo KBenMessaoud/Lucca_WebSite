@@ -1,0 +1,40 @@
+nav img{
+    width: 128px;
+}
+
+nav ul{
+    float: right;
+    list-style-type: none;
+}
+
+ul li{
+    display: inline-block;
+}
+
+nav{
+    width:auto;
+    padding: 15px;
+    background-color: white;
+    box-shadow: 0px -5px 20px 1px #3d3d3d;
+}
+
+
+.conteneur-flex {
+    display: flex; 
+    align-items: center; /* Ajustez la valeur selon votre alignement vertical souhaité (center, flex-start, flex-end, etc.) */
+}
+
+.composant1 {
+    flex: 0; /* Composant1 prend autant d'espace que possible à gauche */
+    text-align: left; /* Alignez le texte à gauche si nécessaire */
+  }
+  
+  .composant2 {
+    flex: 1; /* Composant2 ne prend que l'espace nécessaire pour son contenu */
+    text-align: center; /* Alignez le texte au centre si nécessaire */
+  }
+
+.composant3 {
+    flex: 0;
+    text-align: right;
+}

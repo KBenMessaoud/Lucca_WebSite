@@ -24,6 +24,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Import du service LuccaApiService
 import { LuccaApiService } from './footer/visiteur-new-arrivant/visiteurs/lucca-api.service';
+import { ParametresComponent } from './header/parametres/parametres.component';
+import { HeureActuelleComponent } from './header/heure-actuelle/heure-actuelle.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { LuccaApiService } from './footer/visiteur-new-arrivant/visiteurs/lucca-
     VisiteursComponent,
     J1Component,
     J2Component,
-    J3Component
+    J3Component,
+    ParametresComponent,
+    HeureActuelleComponent
     // Ajoutez ici les autres déclarations de composants si nécessaire
   ],
   imports: [
