@@ -13,7 +13,14 @@ export class VisiteursComponent implements OnInit {
 
   visiteurs1 = [
     { nom: ' A' },
-    { nom: ' B' }
+    { nom: ' B' },
+    {nom:'Mouhamed'},
+    {nom:'Karim'},
+    {nom:'Juliette'},
+    {nom:'Albane'},
+    {nom:'François'},
+    {nom:'Adam'},
+    {nom:'Mustafaa'}
     // Ajoutez d'autres nouveaux arrivants ici
   ];
   constructor(private luccaApiService: LuccaApiService) { }

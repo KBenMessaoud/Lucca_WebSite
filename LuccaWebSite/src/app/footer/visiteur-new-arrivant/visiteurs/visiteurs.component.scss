@@ -8,7 +8,7 @@
   
   .carousel-slide {
     display: flex;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.36s ease-in-out;
   }
   
   .carousel-item {
@@ -51,6 +51,7 @@
     font-size: 24px; // ou la taille du titre dans votre design
     color: #d35400; // ou la couleur de votre titre
     margin-bottom: 15px; // espace sous le titre
+    text-align: center;
   }
   
   // Liste des visiteurs
