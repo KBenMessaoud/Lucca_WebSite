@@ -8,6 +8,7 @@ import { LuccaApiService } from './lucca-api.service'; // Assurez-vous que le ch
 })
 export class VisiteursComponent implements OnInit {
   visiteurs: any[] = [];
+  liste : any[] = [1,2];
   currentSlideIndex = 0;
 
 
