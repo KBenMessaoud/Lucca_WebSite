@@ -43,9 +43,11 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // pour ajouter de l'ombre comme dans l'image
     color: #333; // couleur de texte générale
     font-size: 16px; // taille de texte générale
-    margin: 20px; // espace autour du widget pour le placer correctement
-    
-    
+    position: absolute;
+    bottom: 20px;
+    margin: 10;
+    width: auto;
+
   }
   
   // Titre de la section
