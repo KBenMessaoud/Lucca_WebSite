@@ -1,0 +1,31 @@
+<div class="anniv-container">
+    <div class="anniv-title">Anniversaires</div>
+    
+    <ul class="anniv-list" *ngFor="let i of [].constructor(nbPage); let j = index" >
+      <!-- Ici, nous utilisons *ngFor pour boucler sur chaque anniversaire et l'afficher -->
+      
+      <ng-container *ngIf="j === currentPage">
+        <div class="anniv-list-item" *ngFor="let anniv of getItemPage(j); let a = index">
+          <img src="../../../assets/anniv.png" alt="photo d'anniversaire">
+          <li>
+          <ul>
+            <li>{{anniv.nom}} </li>
+            <li>{{anniv.date}}</li>
+            
+
+          </ul>
+             
+       <!-- {{ visiteur.lastName }} {{ visiteur.firstName }}-->
+          </li>
+        </div>
+      </ng-container>
+    </ul>
+    
+    <!-- Pagination -->
+    <div class="pagination">
+      <ng-container *ngIf="nbPage>1">
+        <span class="dot" *ngFor="let anniv of [].constructor(nbPage); let i = index" [class.active]="i === currentPage"></span>
+      </ng-container>
+    </div>
+  </div>
+  

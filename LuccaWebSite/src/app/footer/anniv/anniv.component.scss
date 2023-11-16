@@ -1,0 +1,110 @@
+.carousel-container {
+    max-width: 600px;
+    margin: auto;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  .carousel-slide {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 16px;
+  }
+  
+  h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    background-color: #f0f0f0;
+    padding: 8px 16px;
+    margin-bottom: 4px;
+    border-radius: 4px;
+  }
+  
+// Définition de la base du conteneur pour les visiteurs
+.anniv-container {
+    background-color: #fff; // ou la couleur de fond réelle de votre widget
+    border-radius: 10px; // ou selon le rayon de bord que vous avez
+    padding: 20px; // ou selon l'espacement intérieur que vous avez
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // pour ajouter de l'ombre comme dans l'image
+    color: #333; // couleur de texte générale
+    font-size: 16px; // taille de texte générale
+    margin: 20px; // espace autour du widget pour le placer correctement
+    
+    
+  }
+  
+  // Titre de la section
+  .anniv-title {
+    font-size: 24px; // ou la taille du titre dans votre design
+    color: #d35400; // ou la couleur de votre titre
+    margin-bottom: 15px; // espace sous le titre
+  }
+  
+  // Liste des visiteurs
+  .anniv-list {
+    list-style: none; // enlève les puces
+    padding-left: 0; // enlève le padding par défaut de la liste
+    display: flex;
+    
+    flex: 1;
+    flex-wrap: wrap;
+  }
+  
+  // Élément de liste individuel
+  .anniv-list-item {
+    background-color: #f0f0f0; // ou la couleur de fond de votre élément de liste
+    padding: 10px; // espace intérieur de l'élément de liste
+    border-radius: 5px; // arrondi des coins de l'élément de liste
+    margin-bottom: 8px; // espace entre les éléments de la liste
+    font-weight: bold; // si les noms des visiteurs sont en gras
+    display: flex;
+    justify-content: space-around;
+
+
+  }
+  
+  img{
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .liste{
+    display: flex;
+    flex-direction: column;
+  }
+    
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+
+    .dot {
+      height: 10px;
+      width: 10px;
+      margin: 0 5px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    .dot.active {
+      background-color: #717171;
+    }
+  }
