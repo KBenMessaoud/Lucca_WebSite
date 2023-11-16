@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class NouveauxArrivantsComponent implements OnInit {
   nouveauxArrivants = [
     { nom: 'Nouvelle Personne A' },
-    { nom: 'Nouvelle Personne B' }
+    { nom: 'Nouvelle Personne B' },
     // Ajoutez d'autres nouveaux arrivants ici
   ];
   currentSlideIndex = 1;

@@ -1,7 +1,10 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { CommonModule, DatePipe } from '@angular/common';
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
 
 // Ici, vous importez vos composants
 import { AppComponent } from './app.component';
@@ -26,6 +29,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LuccaApiService } from './footer/visiteur-new-arrivant/visiteurs/lucca-api.service';
 import { ParametresComponent } from './header/parametres/parametres.component';
 import { HeureActuelleComponent } from './header/heure-actuelle/heure-actuelle.component';
+// Enregistrez la locale française
+registerLocaleData(localeFr, 'fr');
+
 
 @NgModule({
   declarations: [
@@ -58,8 +64,11 @@ import { HeureActuelleComponent } from './header/heure-actuelle/heure-actuelle.c
   ],
   providers: [
     // Ajoutez ici les autres services si nécessaire
-    LuccaApiService // Ajoutez le service LuccaApiService aux providers
+   DatePipe,
+    
+    LuccaApiService,// Ajoutez le service LuccaApiService aux providers
+    { provide: LOCALE_ID, useValue: 'fr' } 
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, AVenirComponent]
 })
 export class AppModule { }
