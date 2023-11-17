@@ -6,8 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nouveaux-arrivants.component.scss']
 })
 export class NouveauxArrivantsComponent implements OnInit {
+  liste : any[] = [1,2];
   nouveauxArrivants = [
     { nom: 'Nouvelle Personne A' },
+    { nom: 'Nouvelle Personne B' },
+    { nom: 'Nouvelle Personne B' },
     { nom: 'Nouvelle Personne B' },
     // Ajoutez d'autres nouveaux arrivants ici
   ];
