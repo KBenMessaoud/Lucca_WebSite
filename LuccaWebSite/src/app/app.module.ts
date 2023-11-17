@@ -69,6 +69,6 @@ registerLocaleData(localeFr, 'fr');
     LuccaApiService,// Ajoutez le service LuccaApiService aux providers
     { provide: LOCALE_ID, useValue: 'fr' } 
   ],
-  bootstrap: [AppComponent, AVenirComponent]
+  bootstrap: [AppComponent, AVenirComponent, J1Component, J2Component, J3Component, DemainComponent, AujComponent]
 })
 export class AppModule { }
