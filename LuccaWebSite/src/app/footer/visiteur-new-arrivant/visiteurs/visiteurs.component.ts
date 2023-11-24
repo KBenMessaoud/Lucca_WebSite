@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LuccaApiService } from './lucca-api.service'; // Assurez-vous que le chemin d'accès est correct
+import { LuccaApiService } from '../../../services/lucca-api.service'; // Assurez-vous que le chemin d'accès est correct
 
 @Component({
   selector: 'app-visiteurs',

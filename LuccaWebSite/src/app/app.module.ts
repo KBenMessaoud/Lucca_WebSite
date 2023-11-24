@@ -26,7 +26,7 @@ import { J3Component } from './calendar/a-venir/j3/j3.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Import du service LuccaApiService
-import { LuccaApiService } from './footer/visiteur-new-arrivant/visiteurs/lucca-api.service';
+import { LuccaApiService } from './services/lucca-api.service';
 import { ParametresComponent } from './header/parametres/parametres.component';
 import { HeureActuelleComponent } from './header/heure-actuelle/heure-actuelle.component';
 // Enregistrez la locale française
@@ -65,9 +65,9 @@ registerLocaleData(localeFr, 'fr');
   providers: [
     // Ajoutez ici les autres services si nécessaire
    DatePipe,
-    
+
     LuccaApiService,// Ajoutez le service LuccaApiService aux providers
-    { provide: LOCALE_ID, useValue: 'fr' } 
+    { provide: LOCALE_ID, useValue: 'fr' }
   ],
   bootstrap: [AppComponent, AVenirComponent, J1Component, J2Component, J3Component, DemainComponent, AujComponent]
 })
