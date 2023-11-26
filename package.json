@@ -1,7 +1,7 @@
 {
   "dependencies": {
-    "@lucca-front/icons": "^16.5.0",
-    "@lucca-front/ng": "^16.5.0",
-    "@lucca-front/scss": "^16.5.0"
+    "@lucca-front/icons": "^16.5.1",
+    "@lucca-front/ng": "^16.5.1",
+    "@lucca-front/scss": "^16.5.1"
   }
 }
