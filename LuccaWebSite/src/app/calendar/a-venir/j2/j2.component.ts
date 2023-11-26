@@ -31,19 +31,14 @@ export class J2Component implements OnInit {
   calculateDate(days: number): Date {
     let currentDate = startOfDay(new Date());
 
-    // Ajout des jours en évitant les samedis et dimanches
-    for (let i = 1; i < days; ) {
-      currentDate = addDays(currentDate, 1);
-
-      // Vérifier si la date actuelle est un week-end
-      if (!isSaturday(currentDate) && !isSunday(currentDate)) {
-        i++;
-      }
-    }
-
+      // Si la date actuelle est un week-end
     // Si la dernière date calculée est un samedi ou dimanche, ajoutez des jours supplémentaires
-    while (isSaturday(currentDate) || isSunday(currentDate)) {
-      currentDate = addDays(currentDate, 1);
+    if (isSaturday(currentDate)) {
+      currentDate = addDays(currentDate, 5);
+    } else if (isSunday(currentDate)) {
+      currentDate = addDays(currentDate, 4);
+    } else {
+      currentDate = addDays(currentDate, 3);
     }
 
     return currentDate;

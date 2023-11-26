@@ -1,5 +1,5 @@
 .carousel-container {
-    max-width: 600px;
+    max-width: 100px;
     margin: auto;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -80,8 +80,8 @@
 
   }
   
-  img{
-    border-radius: 50%;
+  .img{
+    border-radius: 30%;
     flex-shrink: 0;
   }
 

@@ -15,9 +15,7 @@ export class VisiteursComponent implements OnInit {
   visiteurs1 = [
     { nom: ' A' },
     { nom: ' B' },
-    { nom: ' B' },
-    { nom: ' B' },
-    { nom: ' B' },
+    
 
     // Ajoutez d'autres nouveaux arrivants ici
   ];

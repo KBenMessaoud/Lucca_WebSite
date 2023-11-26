@@ -14,16 +14,8 @@ export class AnnivComponent implements OnInit{
   
 
   anniv1 = [
-    {photo: "../../../assets/anniv.png",nom: 'A', date: "01/01/1999"},
-    {photo: "../../../assets/anniv.png",nom: 'B', date: "01/01/1999"},
+   
     {photo: "../../../assets/anniv.png",nom: 'C', date: "01/01/1999"},
-    {photo: "../../../assets/anniv.png",nom: 'D', date: "01/01/1999"},
-    {photo: "../../../assets/anniv.png",nom: 'E', date: "01/01/1999"},
-    {photo: "../../../assets/anniv.png",nom: 'A', date: "01/01/1999"},
-    {photo: "../../../assets/anniv.png",nom: 'B', date: "01/01/1999"},
-    {photo: "../../../assets/anniv.png",nom: 'C', date: "01/01/1999"},
-    {photo: "../../../assets/anniv.png",nom: 'D', date: "01/01/1999"},
-    {photo: "../../../assets/anniv.png",nom: 'E', date: "01/01/1999"}
   ];
 
   nbPage: number = Math.floor(this.anniv1.length/4)+(1*+!(this.anniv1.length%4===0));
