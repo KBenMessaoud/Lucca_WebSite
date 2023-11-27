@@ -14,9 +14,8 @@ exec('node server/index.js', (error, stdout, stderr) => {
 
   console.log(`stdout:\n${stdout}`);
 });
-
 export default {
   '/api/': {
-    target: 'http://localhost:3000',
+    target: 'http://localhost:3200',
   }
 }
