@@ -24,7 +24,7 @@ export class J2Component implements OnInit {
   }
 
   updateDate() {
-    this.date = this.calculateDate(4);
+    this.date = this.calculateDate(3);
     this.formatDay();
   }
 

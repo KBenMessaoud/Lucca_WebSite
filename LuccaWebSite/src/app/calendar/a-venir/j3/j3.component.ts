@@ -35,9 +35,9 @@ export class J3Component implements OnInit {
     if (isSaturday(currentDate)) {
       currentDate = addDays(currentDate, 6);
     } else if (isSunday(currentDate)) {
-      currentDate = addDays(currentDate, 5);
+      currentDate = addDays(currentDate, 7);
     } else {
-      currentDate = addDays(currentDate, 4);
+      currentDate = addDays(currentDate, 6);
     }
 
     return currentDate;
