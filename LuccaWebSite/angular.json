@@ -14,7 +14,21 @@
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
+
+        
+
+
         "build": {
+          "stylePreprocessorOptions": {
+            "includePaths": [
+              "src/scss",
+              "node_modules"
+            ]
+          },
+
+
+
+
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/lucca-web-site",
