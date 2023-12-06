@@ -1,5 +1,7 @@
 
 /* Styles SCSS pour le logo */
+
+@forward '@lucca-front/scss/src/components/actionIcon';
 .toolbar {
     background-color: #f0f0f0; /* Couleur de fond de la barre d'outils, vous pouvez la personnaliser */
     height: 50px; /* Hauteur de la barre d'outils, ajustez selon vos besoins */
