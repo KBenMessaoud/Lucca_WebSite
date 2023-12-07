@@ -19,7 +19,7 @@ export class LuccaApiService {
 
   // Méthode existante pour obtenir les nouveaux arrivants
   getNouveauxArrivants(): Observable<any> {
-    return this.http.get(`${this.apiUrl}path_to_nouveaux_arrivants`);
+    return this.http.get(`${this.apiUrl}/v3/users`);
   }
 
   // Nouvelle méthode pour obtenir la liste des noms et prénoms des utilisateurs
