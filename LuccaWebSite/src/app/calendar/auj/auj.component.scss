@@ -1,9 +1,14 @@
+.container{
+    display: flex;
+    flex-direction: co;
+}
+
 .Auj {
     position: absolute;
     left: 1%;
     top: 90px;
     width: 17%;
-    height: 265px;
+    height: 50%;
     background-color: orangered;
     color: white;
     padding: 10px;

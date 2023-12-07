@@ -1,0 +1,10 @@
+.container {
+    display: flex;
+    justify-content: space-between; /* Répartit les éléments pour remplir l'espace disponible */
+}
+
+.element {
+    width: 18%; /* Ajustez la largeur en fonction de vos besoins */
+    margin: 0 1%; /* Ajoute une marge entre les éléments (1% à gauche et à droite) */
+    /* Ajoutez d'autres styles au besoin */
+}
