@@ -24,7 +24,7 @@ export class J1Component implements OnInit {
   }
 
   updateDate() {
-    this.date = this.calculateDate(3);
+    this.date = this.calculateDate(4);
     this.formatDay();
   }
 
@@ -34,7 +34,7 @@ export class J1Component implements OnInit {
 
       // Si la date actuelle est un week-end
     // Si la dernière date calculée est un samedi ou dimanche, ajoutez des jours supplémentaires
-    if (isSaturday(currentDate)) {
+    if (isSaturday(addDays(currentDate,2))) {
       currentDate = addDays(currentDate, 4);
     } else if (isSunday(currentDate)) {
       currentDate = addDays(currentDate, 3);

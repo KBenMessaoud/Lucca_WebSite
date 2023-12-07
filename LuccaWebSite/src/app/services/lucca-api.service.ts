@@ -16,6 +16,10 @@ export class LuccaApiService {
     return this.http.get(`${this.apiUrl}/v3/users`);
   }
 
+  //Obtenir la liste des absents
+  getAbsentsCount(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/v3/users/leaves`);
+  }
 
   // Méthode existante pour obtenir les nouveaux arrivants
   getNouveauxArrivants(): Observable<any> {
