@@ -2,11 +2,11 @@
   <div class="visiteurs-title">Visiteurs de la journée</div>
   <ul class="visiteurs-list">
     <!-- Ici, nous utilisons *ngFor pour boucler sur chaque visiteur et l'afficher -->
-    <li class="visiteurs-list-item" *ngFor="let visiteur of visiteurs1; let i = index" [class.active]="i === currentSlideIndex">
+    <li class="visiteurs-list-item" *ngFor="let visiteur of visiteurs; let i = index" [class.active]="i === currentSlideIndex">
       <!-- Affichage du nom et du prénom basé sur la réponse de l'API -->
 
     
-        {{ visiteur.nom }}
+        {{ visiteur.name }}
      
      <!-- {{ visiteur.lastName }} {{ visiteur.firstName }}-->
     </li>

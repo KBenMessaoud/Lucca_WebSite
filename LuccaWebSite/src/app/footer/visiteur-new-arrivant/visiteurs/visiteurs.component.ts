@@ -8,16 +8,9 @@ import { LuccaApiService } from '../../../services/lucca-api.service'; // Assure
 })
 export class VisiteursComponent implements OnInit {
   visiteurs: any[] = [];
-  liste : any[] = [1,2];
+  liste: any[] = [1, 2];
   currentSlideIndex = 0;
 
-
-  visiteurs1 = [
-    { nom: ' A' },
-    { nom: ' B' },
-   
-    // Ajoutez d'autres nouveaux arrivants ici
-  ];
   constructor(private luccaApiService: LuccaApiService) { }
 
   ngOnInit(): void {
@@ -25,22 +18,27 @@ export class VisiteursComponent implements OnInit {
     // Changez la durée si nécessaire
     setInterval(() => this.goToNextSlide(), 3000);
   }
-// Dans visiteurs.component.ts
-loadVisiteurs(): void {
-  this.luccaApiService.getUsers().subscribe({
-    next: (response) => {
-      // Nous extrayons le tableau 'items' de la réponse de l'API
-      this.visiteurs = response.items;
-    },
-    error: (error) => {
-      console.error('Erreur lors de la récupération des visiteurs:', error);
-    }
-  });
-}
 
-
+  loadVisiteurs(): void {
+    this.luccaApiService.getUsers().subscribe({
+      next: (response) => {
+        // On s'assure que 'items' est bien présent dans 'data'
+        if (response && response.data && response.data.items) {
+          // On extrait le tableau 'items' de la réponse de l'API
+          this.visiteurs = response.data.items;
+        }
+      },
+      error: (error) => {
+        console.error('Erreur lors de la récupération des visiteurs:', error);
+      }
+    });
+  }
+  
 
   goToNextSlide(): void {
-    this.currentSlideIndex = (this.currentSlideIndex + 1) % this.visiteurs.length;
+    // Vérifiez si 'visiteurs' est défini et a des éléments
+    if (this.visiteurs && this.visiteurs.length > 0) {
+      this.currentSlideIndex = (this.currentSlideIndex + 1) % this.visiteurs.length;
+    }
   }
 }
