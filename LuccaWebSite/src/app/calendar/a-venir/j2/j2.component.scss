@@ -1,7 +1,8 @@
 .Jo {
     position: absolute;
     left: 61%;
-    top: 90px;
+    margin-top: 0.5%;
+    box-shadow: 0px 0px 15px 0.05px #838383;
     width: 17%;
     height: 50%;
     background-color: white;
@@ -19,4 +20,8 @@
     font-family: 'Source Sans 3', sans-serif;
     margin: 0; 
     font-size: 24px;
+}
+
+:host {
+    z-index: 2; /* z-index plus élevé pour le premier composant */
 }
