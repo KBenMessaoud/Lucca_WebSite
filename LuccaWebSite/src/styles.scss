@@ -73,6 +73,29 @@ body {
     /* le corps de la page*/
   }
   
-
+  .conteneur {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Cela répartit les boîtes uniformément sur la largeur du conteneur */
+  }
+  
+  .boite {
+    flex: 0 0 200px; /* flex-grow, flex-shrink, flex-basis */
+    height: 300px; /* Hauteur fixe pour les boîtes */
+    margin: 10px; /* Espace entre les boîtes */
+    /* Ajouter des styles supplémentaires pour la mise en forme, comme des bordures, des ombres, etc. */
+  }
+  
+  /* Pour rendre les boîtes responsive, vous pouvez utiliser les media queries */
+  @media (max-width: 600px) {
+    .conteneur {
+      flex-direction: column;
+    }
+  
+    .boite {
+      flex-basis: 100%; /* Les boîtes prendront toute la largeur du conteneur sur les petits écrans */
+    }
+  }
+  
 
 

@@ -1,28 +1,26 @@
+
 <app-header></app-header>
+<div class="conteneur-calendrier">
+  <app-calendar></app-calendar> 
+  
+  <div class="conteneur-evenements">
+    <app-auj class="evenement auj"></app-auj>
+    <app-demain class="evenement demain"></app-demain>
+    <app-a-venir class="a-venir">
+      <app-j1 class="jour"></app-j1>
+      <app-j2 class="jour"></app-j2>
+      <app-j3 class="jour"></app-j3>
+    </app-a-venir>
+  </div>
+</div>
 
-
-
-<app-calendar>
-  <app-a-venir>
-    <app-j1></app-j1>
-    <app-j2></app-j2>
-    <app-j3></app-j3>
-  </app-a-venir>
-  <app-auj></app-auj>
-  <app-demain></app-demain>
-</app-calendar>
-
-
-
-<app-footer>
-  <app-anniv></app-anniv>
-  <app-personnel></app-personnel>
-  <app-visiteur-new-arrivant>
+<div class="conteneur-inferieur">
+  <app-anniv class="carte anniv"></app-anniv>
+  <app-personnel class="carte personnel"></app-personnel>
+  <app-visiteur-new-arrivant class="carte visiteur-new-arrivant">
     <app-visiteurs></app-visiteurs>
     <app-nouveaux-arrivants></app-nouveaux-arrivants>
   </app-visiteur-new-arrivant>
+</div>
 
-</app-footer>
-
-
-   
+<app-footer></app-footer>
