@@ -1,7 +1,7 @@
 // j2.component.ts
 import { Component, OnInit } from '@angular/core';
 import { DatePipe } from '@angular/common';
-import { addDays, isSaturday, isSunday, startOfDay } from 'date-fns';
+import { addDays,isMonday, isSaturday, isSunday, startOfDay } from 'date-fns';
 
 @Component({
   selector: 'app-j2',
@@ -24,7 +24,7 @@ export class J2Component implements OnInit {
   }
 
   updateDate() {
-    this.date = this.calculateDate(4);
+    this.date = this.calculateDate(3);
     this.formatDay();
   }
 
@@ -34,9 +34,11 @@ export class J2Component implements OnInit {
       // Si la date actuelle est un week-end
     // Si la dernière date calculée est un samedi ou dimanche, ajoutez des jours supplémentaires
     if (isSaturday(addDays(currentDate,3))) {
-      currentDate = addDays(currentDate, 5);
+      currentDate = addDays(currentDate, 6);
     } else if (isSunday(addDays(currentDate,3))) {
-      currentDate = addDays(currentDate, 3);
+      currentDate = addDays(currentDate, 7);
+    } else if (isMonday(addDays(currentDate,3))) {
+      currentDate = addDays(currentDate, 4);
     } else {
       currentDate = addDays(currentDate, 3);
     }

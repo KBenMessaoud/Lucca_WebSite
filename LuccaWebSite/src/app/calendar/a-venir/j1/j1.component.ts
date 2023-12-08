@@ -36,7 +36,7 @@ export class J1Component implements OnInit {
     // Si la dernière date calculée est un samedi ou dimanche, ajoutez des jours supplémentaires
     if (isSaturday(addDays(currentDate,2))) {
       currentDate = addDays(currentDate, 4);
-    } else if (isSunday(currentDate)) {
+    } else if (isSunday(addDays(currentDate,2))) {
       currentDate = addDays(currentDate, 3);
     } else {
       currentDate = addDays(currentDate, 2);

@@ -35,9 +35,9 @@ export class AujComponent  implements OnInit{
       //currentDate = addDays(currentDate, 1);
 
       //Vérifier si la date actuelle est un week-end
-      if (isSaturday(currentDate)) {
+      if (isSaturday(addDays(currentDate,0))) {
         currentDate = addDays(currentDate, 2);
-      } else if (isSunday(currentDate)) {
+      } else if (isSunday(addDays(currentDate,0))) {
         currentDate = addDays(currentDate, 1);
       } else {
         currentDate = addDays(currentDate, 0);

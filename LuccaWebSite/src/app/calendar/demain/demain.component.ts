@@ -45,10 +45,10 @@ export class DemainComponent {
   
 
     // Si la dernière date calculée est un samedi ou dimanche, ajoutez des jours supplémentaires
-    if (isSaturday(currentDate)) {
+    if (isSaturday(addDays(currentDate,1))) {
       currentDate = addDays(currentDate, 3);
-    } else if (isSunday(currentDate)) {
-      currentDate = addDays(currentDate, 2);
+    } else if (isSunday(addDays(currentDate,1))) {
+      currentDate = addDays(currentDate, 3);
     } else {
       currentDate = addDays(currentDate, 1);
     }
