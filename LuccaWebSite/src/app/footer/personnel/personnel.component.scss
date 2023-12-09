@@ -7,11 +7,12 @@
   background-color: white; // Couleur de fond avec une certaine transparence (à modifier 
   color: orangered; // Couleur du texte en orangered
   padding: 10px; // Espace intérieur de 10 pixels
-  border-radius: 20px; // Coins arrondis pour un aspect de carré
   display: flex; // Utilise le modèle de boîte flexible
   flex-direction: column; // Aligne les éléments verticalement
   align-items: center; // Centre le contenu verticalement
   justify-content: flex-end; // Texte en bas de la page 
+  box-shadow: 0px 0px 15px 0.05px #838383;
+  border-radius: 20px;
 }
 
 .nombre-present {
