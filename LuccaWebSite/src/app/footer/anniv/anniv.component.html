@@ -4,19 +4,70 @@
     <ul class="anniv-list" *ngFor="let i of [].constructor(nbPage); let j = index" >
       <!-- Ici, nous utilisons *ngFor pour boucler sur chaque anniversaire et l'afficher -->
       
-      <ng-container *ngIf="j === currentPage">
-        <div class="anniv-list-item" *ngFor="let anniv of getItemPage(j); let a = index">
-          <img src="../../../assets/anniv.png" alt="photo d'anniversaire">
-          <li>
-          <ul>
-            <li>{{anniv.nom}} </li>
-            <li>{{anniv.date}}</li>
-            
+      <ng-container *ngIf="j === currentPage" class="current">
+       <!-- On n'affiche que pour la page actuelle -->
 
-          </ul>
-             
-       <!-- {{ visiteur.lastName }} {{ visiteur.firstName }}-->
-          </li>
+       <!-- On sépare les cas où il y a 2 éléments ou moins -->
+        <div class="seul" *ngIf="getItemPage(j).length<=2">
+          <div class="anniv-list-item" *ngFor="let anniv of getItemPage(j); let a = index">
+            
+            <!-- L'ajout d'un div avec une taille max permet de faire varier la taille de 
+              l'image en fonction de l'espace disponible-->
+            <div style="max-width:100px; margin-right: 35px">
+              <img src="../../../assets/anniv.png" alt="photo d'anniversaire">
+            </div>
+            
+            <ul class="items">
+              <li>{{anniv.nom}} </li>
+              <li>{{anniv.date}}</li>
+            </ul>
+
+          </div>
+        </div>
+
+        <!-- On traite le cas où il y a plus de 2 éléments -->
+        <div *ngIf="getItemPage(j).length>2">
+
+          <!-- On regroupe les éléments par deux pour faciliter la disposition des blocs-->
+          <div class="ensemble">
+            <div class="anniv-list-item" *ngFor="let anniv of getItemPage(j); let a = index">
+              
+              <!-- On affiche d'abord les deux premiers éléments-->
+              <ng-container  *ngIf="a==0||a==1">
+
+                <!-- L'ajout d'un div avec une taille max permet de faire varier la taille de 
+                 l'image en fonction de l'espace disponible-->
+                <div style="max-width:80px; margin-right: 25px;">
+                  <img src="../../../assets/anniv.png" alt="photo d'anniversaire">
+                </div>
+                <ul class="items">
+                  <li>{{anniv.nom}} </li>
+                  <li>{{anniv.date}}</li>
+                </ul>
+              </ng-container>
+            </div>
+          </div>
+
+
+          <!-- On répète l'opération pour les élèments restants-->
+          <div class="ensemble">
+            <div class="anniv-list-item" *ngFor="let anniv of getItemPage(j); let a = index">
+              
+              
+              <ng-container class="anniv-list-item" *ngIf="a==2||a==3">
+
+                <div style="max-width:80px; margin-right: 25px;">
+                  <img src="../../../assets/anniv.png" alt="photo d'anniversaire">
+                </div>                
+              
+                <ul class="items">
+                  <li>{{anniv.nom}} </li>
+                  <li>{{anniv.date}}</li>
+                </ul>
+              </ng-container>
+            </div> 
+          </div>
+          
         </div>
       </ng-container>
     </ul>

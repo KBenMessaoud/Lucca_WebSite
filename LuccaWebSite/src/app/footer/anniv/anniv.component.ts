@@ -15,7 +15,15 @@ export class AnnivComponent implements OnInit{
 
   anniv1 = [
     {photo: "../../../assets/anniv.png",nom: 'A', date: "01/01/1999"},
- 
+    {photo: "../../../assets/anniv.png",nom: 'B', date: "01/01/1999"},
+    {photo: "../../../assets/anniv.png",nom: 'C', date: "01/01/1999"},
+    {photo: "../../../assets/anniv.png",nom: 'D', date: "01/01/1999"},
+    {photo: "../../../assets/anniv.png",nom: 'E', date: "01/01/1999"},
+    {photo: "../../../assets/anniv.png",nom: 'A', date: "01/01/1999"},
+    {photo: "../../../assets/anniv.png",nom: 'B', date: "01/01/1999"},
+    {photo: "../../../assets/anniv.png",nom: 'C', date: "01/01/1999"},
+    {photo: "../../../assets/anniv.png",nom: 'D', date: "01/01/1999"},
+    {photo: "../../../assets/anniv.png",nom: 'E', date: "01/01/1999"}
   ];
 
   nbPage: number = Math.floor(this.anniv1.length/4)+(1*+!(this.anniv1.length%4===0));
@@ -28,6 +36,8 @@ export class AnnivComponent implements OnInit{
   constructor(){}
 
 
+  /*On affiche 4 éléments au plus par page.
+  Cette méthode permet de récupérer les éléments qui seront afficher sur la page i*/
   getItemPage(i: number): any[] {
     let anniv : any[] = [];
     if(3+4*i>=this.anniv1.length){

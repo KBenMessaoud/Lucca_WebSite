@@ -1,28 +1,3 @@
-.carousel-container {
-    max-width: 600px;
-    margin: auto;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-  }
-  
-  .carousel-slide {
-    display: flex;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .carousel-item {
-    min-width: 100%;
-    box-sizing: border-box;
-    padding: 16px;
-  }
-  
-  h2 {
-    color: #333;
-    font-size: 24px;
-    margin-bottom: 8px;
-  }
-  
   ul {
     list-style: none;
     padding: 0;
@@ -35,65 +10,103 @@
     border-radius: 4px;
   }
   
-// Définition de la base du conteneur pour les visiteurs
+// Définition de la base du conteneur pour les anniversaires
 .anniv-container {
-    background-color: #fff; // ou la couleur de fond réelle de votre widget
-    border-radius: 10px; // ou selon le rayon de bord que vous avez
-    padding: 20px; // ou selon l'espacement intérieur que vous avez
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // pour ajouter de l'ombre comme dans l'image
+    background-color: #fff; 
+    border-radius: 10px; // arrondi les coins du conteneur
+    padding: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // pour ajouter l'ombre
     color: #333; // couleur de texte générale
     font-size: 16px; // taille de texte générale
+    display: flex;
+    flex-direction: column;
+    
+    //En attendant le positionement générale des éléments autour
     position: absolute;
+    height: 275px;
     bottom: 20px;
-    margin: 10;
-    width: auto;
+    margin: 10px;
+    width: 45%;
+    
 
   }
   
   // Titre de la section
   .anniv-title {
-    font-size: 24px; // ou la taille du titre dans votre design
-    color: #d35400; // ou la couleur de votre titre
-    margin-bottom: 15px; // espace sous le titre
+    font-size: 24px; 
+    color: #d35400; 
+    margin-bottom: 15px;
+    flex-shrink: 0;
   }
   
-  // Liste des visiteurs
+  //L'ensemble des anniversaires affiché sur la page
   .anniv-list {
-    list-style: none; // enlève les puces
-    padding-left: 0; // enlève le padding par défaut de la liste
+    margin: 0px;
     display: flex;
+    flex-direction: column;
     
-    flex: 1;
-    flex-wrap: wrap;
+    flex-grow: 1;
+    flex-shrink: 1;
+    max-width: 100%;
+    
+    min-width: 0px;
+    min-height: 0px;
+
+  }
+
+  //Permet de libérer l'espace que prendrait les autres pages vides
+  .anniv-list:empty {
+    display: none;
   }
   
-  // Élément de liste individuel
-  .anniv-list-item {
-    background-color: #f0f0f0; // ou la couleur de fond de votre élément de liste
-    padding: 10px; // espace intérieur de l'élément de liste
+  //Elément groupé par 2
+  .ensemble {
+    background-color: #ffffff; // ou la couleur de fond de votre élément de liste
     border-radius: 5px; // arrondi des coins de l'élément de liste
-    margin-bottom: 8px; // espace entre les éléments de la liste
     font-weight: bold; // si les noms des visiteurs sont en gras
     display: flex;
+    flex-basis: auto;
     justify-content: space-around;
+  }
 
+  //Display pour une page avec 2 éléments ou moins
+  .seul{
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+  }
 
+  // Eléments de chaque anniversaire (Photo + nom et date)
+  .anniv-list-item {
+    padding: 10px;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+    //Permet de libérer l'espace que prendrait un éléments vide (quand seulement 3 éléments)
+  .anniv-list-item:empty {
+    display: none;
   }
   
   img{
-    border-radius: 50%;
-    flex-shrink: 0;
+    flex-shrink: 2;
+    border-radius: 50%; //Rend l'image circulaire (si image de base carré)
+    max-width: 100%; //permet de faire varier automatiquement la taille de l'image
+    height: auto;
   }
 
-  .liste{
-    display: flex;
-    flex-direction: column;
+  .items{
+    font-weight: bold;
+    border-radius: 5px; //Arrondie les coins
+    flex-shrink: 1;
   }
-    
 
   .pagination {
     display: flex;
     justify-content: center;
+    justify-self: flex-end;
     margin-top: 10px;
 
     .dot {
