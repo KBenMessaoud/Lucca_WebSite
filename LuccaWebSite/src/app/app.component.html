@@ -1,28 +1,18 @@
 <app-header></app-header>
 
-
-
-<app-calendar>
-  <app-a-venir>
-    <app-j1></app-j1>
-    <app-j2></app-j2>
-    <app-j3></app-j3>
-  </app-a-venir>
-  <app-auj></app-auj>
-  <app-demain></app-demain>
-</app-calendar>
-
-
-
-<app-footer>
-  <app-anniv></app-anniv>
-  <app-personnel></app-personnel>
-  <app-visiteur-new-arrivant>
-    <app-visiteurs></app-visiteurs>
-    <app-nouveaux-arrivants></app-nouveaux-arrivants>
-  </app-visiteur-new-arrivant>
-
-</app-footer>
-
+<div class="container">
+  <div class="top">
+    <div class="element"><app-auj></app-auj></div>
+    <div class="element"><app-demain></app-demain></div>
+    <div class="element"><app-j1></app-j1></div>
+    <div class="element"><app-j2></app-j2></div>
+    <div class="element"><app-j3></app-j3></div>
+  </div>
+  <div class="bot">
+    <div class="personnel"><app-personnel></app-personnel></div>
+    <div class="personnel"><app-anniv></app-anniv></div>
+    <div class="personnel"><app-personnel></app-personnel></div>
+  </div>
+</div>
 
    

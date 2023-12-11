@@ -38,3 +38,7 @@ nav{
     flex: 0;
     text-align: right;
 }
+
+:host{
+    z-index: 2;
+}
