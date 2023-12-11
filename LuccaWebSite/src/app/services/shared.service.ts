@@ -11,4 +11,5 @@ export class SharedService {
   setLieu(lieu: string) {
     this.lieuSubject.next(lieu);
   }
+
 }
