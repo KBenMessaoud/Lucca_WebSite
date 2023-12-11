@@ -1,19 +1,9 @@
-
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@700&display=swap');
-	@forward '@lucca-front/icons/src/main';
- 
-  </style>
-
 <div class="icon-container">
 	
-	<img
-	
-	  width="57"
-	  alt="Paramètres"
-	  src= ''
-	  (click)="toggleSettingsMenu()"
-	/>
+	<button type="button" class="actionIcon  " luTooltip="Parametres" (click)="toggleSettingsMenu()">
+		<span aria-hidden="true" class="lucca-icon icon-settingsGear"></span>
+		<span class="u-mask">Parametres</span>
+	</button>
 	<div class="settings-menu" *ngIf="showSettingsMenu">
 	  <label for="siteLocation">Site:</label>
 	  <select id="siteLocation" [(ngModel)]="selectedSiteLocation" (change)="onOptionSelected($event)">

@@ -1,3 +1,4 @@
+@forward '@lucca-front/scss/src/components/actionIcon';
 /* Styles SCSS pour le logo */
 .toolbar {
     background-color: #f0f0f0; /* Couleur de fond de la barre d'outils, vous pouvez la personnaliser */
@@ -51,3 +52,6 @@
     display: block;
   }
   
+  :host{
+    z-index: 3;
+  }
