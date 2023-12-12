@@ -1,22 +1,31 @@
 // Utiliser le même conteneur que pour les visiteurs, avec une classe différente
 .nouveaux-arrivants-container {
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    color: #333;
-    font-size: 16px;
-    margin: 20px;
+  box-shadow: 0px 0px 15px 0.05px #838383;
+  border-radius: 20px;
+  background-color: #fff; 
+  padding: 10px;
+  padding-bottom: 0px; 
+  color: #333; // couleur de texte générale
+  font-size: 16px; // taille de texte générale
+  display: flex;
+  flex-direction: column;
+  
+  height: 100%;
+  width:100%;
   }
   
   // Titre de la section, en supposant que vous souhaitez une couleur différente
   .nouveaux-arrivants-title {
-    font-size: 24px;
-    color:#d35400; // Changer la couleur si nécessaire
-    margin-bottom: 15px;
-    text-align: center;
+    font-size: 2em; 
+    color: orangered; 
+    margin-bottom: 5px;
+    flex-shrink: 0;
+    font-weight: bold;
   }
   
+
+
+
   // Liste des nouveaux arrivants avec les mêmes styles que les visiteurs
   .nouveaux-arrivants-list {
     list-style: none;
