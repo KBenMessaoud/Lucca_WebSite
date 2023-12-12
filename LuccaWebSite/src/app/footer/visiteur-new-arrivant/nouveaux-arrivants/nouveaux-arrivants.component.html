@@ -3,7 +3,7 @@
   <ul class="nouveaux-arrivants-list">
     <!-- Utilisez 'firstName' et 'lastName' pour afficher le nom complet de l'arrivant -->
     <li class="nouveaux-arrivants-item" *ngFor="let arrivant of nouveauxArrivants; let i = index" [class.active]="i === currentSlideIndex">
-      {{ arrivant.firstName }} {{ arrivant.lastName }}
+      {{ arrivant.name }}
     </li>
   </ul>
   <!-- Pagination -->

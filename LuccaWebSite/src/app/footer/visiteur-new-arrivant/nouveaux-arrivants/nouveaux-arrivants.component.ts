@@ -15,7 +15,7 @@ export class NouveauxArrivantsComponent implements OnInit {
   ngOnInit(): void {
     this.loadNouveauxArrivants();
     // Changez la durée si nécessaire
-    setInterval(() => this.goToNextSlide(), 3000);
+    setInterval(() => this.goToNextSlide(), 5000);
   }
 
   loadNouveauxArrivants(): void {
@@ -26,7 +26,7 @@ export class NouveauxArrivantsComponent implements OnInit {
           // On extrait le tableau 'items' de la réponse de l'API
           this.nouveauxArrivants = response.data.items;
           // On limite le tableau à 5 éléments
-          this.nouveauxArrivants = this.nouveauxArrivants.slice(0, 5);
+          this.nouveauxArrivants = this.nouveauxArrivants.slice(0, 4);
         }
       },
       error: (error) => {

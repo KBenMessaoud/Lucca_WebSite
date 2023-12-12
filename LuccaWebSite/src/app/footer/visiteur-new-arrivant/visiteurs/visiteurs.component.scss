@@ -1,11 +1,4 @@
-.carousel-container {
-    max-width: 600px;
-    margin: auto;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-  }
-  
+
   .carousel-slide {
     display: flex;
     transition: transform 0.36s ease-in-out;
@@ -37,21 +30,27 @@
   
 // Définition de la base du conteneur pour les visiteurs
 .visiteurs-container {
-    background-color: #fff; // ou la couleur de fond réelle de votre widget
-    border-radius: 10px; // ou selon le rayon de bord que vous avez
-    padding: 20px; // ou selon l'espacement intérieur que vous avez
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // pour ajouter de l'ombre comme dans l'image
-    color: #333; // couleur de texte générale
-    font-size: 16px; // taille de texte générale
-    margin: 20px; // espace autour du widget pour le placer correctement
+  box-shadow: 0px 0px 15px 0.05px #838383;
+  border-radius: 20px;
+  background-color: #fff; 
+  padding: 8px;
+  padding-bottom: 0px; 
+  color: #333; // couleur de texte générale
+  font-size: 16px; // taille de texte générale
+  display: flex;
+  flex-direction: column;
+  
+  height: 100%;
+  width:80%;
   }
   
   // Titre de la section
   .visiteurs-title {
-    font-size: 24px; // ou la taille du titre dans votre design
-    color: #d35400; // ou la couleur de votre titre
-    margin-bottom: 15px; // espace sous le titre
-    text-align: center;
+    font-size: 2em; 
+    color: orangered; 
+    margin-bottom: 5px;
+    flex-shrink: 0;
+    font-weight: bold;
   }
   
   // Liste des visiteurs
@@ -62,18 +61,15 @@
   
   // Élément de liste individuel
   .visiteurs-list-item {
-    background-color: #f0f0f0; // ou la couleur de fond de votre élément de liste
-    padding: 10px; // espace intérieur de l'élément de liste
-    border-radius: 5px; // arrondi des coins de l'élément de liste
-    margin-bottom: 8px; // espace entre les éléments de la liste
-    font-weight: bold; // si les noms des visiteurs sont en gras
+    background-color: #f0f0f0;
+    padding: 8px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    font-weight: bold;
   }
     
 
-  .pagination {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
+ 
 
     .dot {
       height: 10px;
@@ -88,4 +84,4 @@
     .dot.active {
       background-color: #717171;
     }
-  }
+  

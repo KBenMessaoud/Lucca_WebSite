@@ -19,8 +19,8 @@
   .bot{
     display: flex;
     justify-content: space-between;
-    flex-direction: row;
-    height:30%;
+    height: 30%;
+    flex-direction: row-reverse;
   }
   
   
@@ -34,10 +34,33 @@
   }
 
   .personnel {
+    width: 5%;
+    flex-grow: 1;
+    flex-basis: 0;
+    flex-shrink: 1;
+    margin-right: 1%;
+    margin-left: 1%;
+    
+  }
+  .visiteursNouveauxArrivants {
     width: 20%;
     flex-grow: 1;
     flex-basis: 0;
     flex-shrink: 1;
     margin-right: 1%;
     margin-left: 1%;
+    justify-content: center;
+    align-items: center;
   }
+
+  .anniv {
+    width: 20%;
+    flex-grow: 1;
+    flex-basis: 0;
+    flex-shrink: 1;
+    margin-right: 1%;
+    margin-left: 1%;
+    justify-content: center;
+    align-items: center;
+  }
+  

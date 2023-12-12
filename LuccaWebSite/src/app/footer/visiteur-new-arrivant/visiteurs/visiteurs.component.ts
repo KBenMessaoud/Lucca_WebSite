@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LuccaApiService } from '../../../services/lucca-api.service'; // Assurez-vous que le chemin d'accès est correct
+import { LuccaApiService } from '../../../services/lucca-api.service';
 
 @Component({
   selector: 'app-visiteurs',
@@ -16,7 +16,7 @@ export class VisiteursComponent implements OnInit {
   ngOnInit(): void {
     this.loadVisiteurs();
     // Changez la durée si nécessaire
-    setInterval(() => this.goToNextSlide(), 3000);
+    setInterval(() => this.goToNextSlide(), 4000);
   }
 
   loadVisiteurs(): void {
@@ -26,6 +26,12 @@ export class VisiteursComponent implements OnInit {
         if (response && response.data && response.data.items) {
           // On extrait le tableau 'items' de la réponse de l'API
           this.visiteurs = response.data.items;
+          // On trie la liste par date de visite
+          this.visiteurs.sort((a, b) => {
+            return a.lastVisitedAt - b.lastVisitedAt;
+          });
+          // On prend les 10 premiers éléments
+          this.visiteurs = this.visiteurs.slice(6, 10);
         }
       },
       error: (error) => {
@@ -33,7 +39,6 @@ export class VisiteursComponent implements OnInit {
       }
     });
   }
-  
 
   goToNextSlide(): void {
     // Vérifiez si 'visiteurs' est défini et a des éléments
