@@ -15,14 +15,13 @@ ul {
     box-shadow: 0px 0px 15px 0.05px #838383;
     border-radius: 20px;
     background-color: #fff; 
-    padding: 10px; 
+    padding: 10px;
+    padding-bottom: 0px; 
     color: #333; // couleur de texte générale
     font-size: 16px; // taille de texte générale
     display: flex;
     flex-direction: column;
     
-    //En attendant le positionement générale des éléments autour
-
     height: 100%;
     width:100%;
     
@@ -33,7 +32,7 @@ ul {
   .anniv-title {
     font-size: 2em; 
     color: orangered; 
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     flex-shrink: 0;
     font-weight: bold;
   }
@@ -42,14 +41,13 @@ ul {
   .anniv-list {
     margin: 0px;
     display: flex;
-    flex-direction: column;
-    
+    flex-grow: 1;
+    align-items: center;
+
     flex-grow: 1;
     flex-shrink: 1;
     max-width: 100%;
-    
-    min-width: 0px;
-    min-height: 0px;
+    max-height: 85%;
 
   }
 
@@ -58,23 +56,6 @@ ul {
     display: none;
   }
   
-  //Elément groupé par 2
-  .ensemble {
-    background-color: #ffffff; // ou la couleur de fond de votre élément de liste
-    border-radius: 5px; // arrondi des coins de l'élément de liste
-    font-weight: bold; // si les noms des visiteurs sont en gras
-    display: flex;
-    flex-basis: auto;
-    justify-content: space-around;
-  }
-
-  //Display pour une page avec 2 éléments ou moins
-  .seul{
-    display: flex;
-    flex-grow: 1;
-    align-items: center;
-  }
-
   // Eléments de chaque anniversaire (Photo + nom et date)
   .anniv-list-item {
     padding: 10px;
@@ -106,7 +87,6 @@ ul {
     display: flex;
     justify-content: center;
     justify-self: flex-end;
-    margin-top: 10px;
 
     .dot {
       height: 10px;

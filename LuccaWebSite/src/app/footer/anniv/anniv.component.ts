@@ -22,11 +22,10 @@ export class AnnivComponent implements OnInit{
     {photo: "../../../assets/anniv.png",nom: 'A', date: "01/01/1999"},
     {photo: "../../../assets/anniv.png",nom: 'B', date: "01/01/1999"},
     {photo: "../../../assets/anniv.png",nom: 'C', date: "01/01/1999"},
-    {photo: "../../../assets/anniv.png",nom: 'D', date: "01/01/1999"},
-    {photo: "../../../assets/anniv.png",nom: 'E', date: "01/01/1999"}
+    {photo: "../../../assets/anniv.png",nom: 'D', date: "01/01/1999"}
   ];
 
-  nbPage: number = Math.floor(this.anniv1.length/4)+(1*+!(this.anniv1.length%4===0));
+  nbPage: number = Math.floor(this.anniv1.length/2)+(1*+!(this.anniv1.length%2===0));
   
 
   photo1 = [
@@ -36,18 +35,18 @@ export class AnnivComponent implements OnInit{
   constructor(){}
 
 
-  /*On affiche 4 éléments au plus par page.
+  /*On affiche 2 éléments au plus par page.
   Cette méthode permet de récupérer les éléments qui seront afficher sur la page i*/
   getItemPage(i: number): any[] {
     let anniv : any[] = [];
-    if(3+4*i>=this.anniv1.length){
-      for(let j=0;j<this.anniv1.length%4;j++){
-        anniv[j] = {nom: this.anniv1[j+4*i].nom, date: this.anniv1[j+4*i].date};
+    if(1+2*i>=this.anniv1.length){
+      for(let j=0;j<this.anniv1.length%2;j++){
+        anniv[j] = {nom: this.anniv1[j+2*i].nom, date: this.anniv1[j+2*i].date};
       }
     }
     else{
-      for(let j=0;j<4;j++){
-        anniv[j] = {nom: this.anniv1[j+4*i].nom, date: this.anniv1[j+4*i].date};
+      for(let j=0;j<2;j++){
+        anniv[j] = {nom: this.anniv1[j+2*i].nom, date: this.anniv1[j+2*i].date};
       }
     }
     return anniv;
