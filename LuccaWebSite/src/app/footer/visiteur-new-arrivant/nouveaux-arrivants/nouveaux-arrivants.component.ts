@@ -25,7 +25,7 @@ export class NouveauxArrivantsComponent implements OnInit {
         if (response && response.data && response.data.items) {
           // On extrait le tableau 'items' de la réponse de l'API
           this.nouveauxArrivants = response.data.items;
-          // On limite le tableau à 5 éléments
+          // On limite le tableau à 5 élémentss
           this.nouveauxArrivants = this.nouveauxArrivants.slice(0, 4);
         }
       },

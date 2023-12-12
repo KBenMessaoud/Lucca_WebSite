@@ -15,7 +15,7 @@ export class VisiteursComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadVisiteurs();
-    // Changez la durée si nécessaire
+    // Changez la durée si nécessaires
     setInterval(() => this.goToNextSlide(), 4000);
   }
 
