@@ -1,39 +1,49 @@
 .personne {
   display: flex;
   position: relative;
-  justify-content: space-between;
+  justify-content: center;
   flex-direction: column;
-
   align-items: center;
   height: 100%;
   width: 100%;
-  padding: 20px;
+  padding: 19px;
   box-shadow: 0px 0px 15px 0.05px #838383;
   border-radius: 20px;
   background-color: white;
   color: orangered;
-  
 }
 
-.un{
+.un {
   margin-top: 4em;
-  height: 75%;
+  height: 50%; /* Ajustez la hauteur en fonction de vos besoins */
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.deux{
-  height: 25%;
+.deux {
+  height: 50%; 
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  margin-top: 3em;
+  align-items: center;
 }
 
 .nombre-present {
-  font-size: 9em;
+  font-size: 12em;
   font-weight: bold;
   color: orangered;
+  justify-content: center; 
+  margin-top: 0.009em;
+  margin-bottom: 0.1em;
 }
 
 .personnes-text {
-  font-size: 1.5em;
+  font-size: 1.9em;
   font-weight: bold;
   color: rgb(19, 29, 53);
+  justify-content: center; 
 }
