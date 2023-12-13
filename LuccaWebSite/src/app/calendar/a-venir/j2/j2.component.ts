@@ -34,9 +34,9 @@ export class J2Component implements OnInit {
       // Si la date actuelle est un week-end
     // Si la dernière date calculée est un samedi ou dimanche, ajoutez des jours supplémentaires
     if (isSaturday(addDays(currentDate,3))) {
-      currentDate = addDays(currentDate, 6);
+      currentDate = addDays(currentDate, 5);
     } else if (isSunday(addDays(currentDate,3))) {
-      currentDate = addDays(currentDate, 7);
+      currentDate = addDays(currentDate, 6);
     } else if (isMonday(addDays(currentDate,3))) {
       currentDate = addDays(currentDate, 4);
     } else {
