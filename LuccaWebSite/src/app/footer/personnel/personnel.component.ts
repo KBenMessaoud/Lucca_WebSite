@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LuccaApiService } from '../../services/lucca-api.service';
+import { CollabService } from '../../services/collab.service';
 
 @Component({
   selector: 'app-personnel',
@@ -7,9 +7,9 @@ import { LuccaApiService } from '../../services/lucca-api.service';
   styleUrls: ['./personnel.component.scss']
 })
 export class PersonnelComponent implements OnInit {
-  numPresentToday: number = 15; // Initialise la variable pour afficher le nombre de personnes présentes
+  numPresentToday: number = 0; // Initialise la variable pour afficher le nombre de personnes présentes
 
-  constructor(private luccaApiService: LuccaApiService) {}
+  constructor(private CollabService: CollabService) {}
 
   ngOnInit() {
     // Planifie l'exécution de la fonction de vérification chaque jour à 8h (en millisecondes)
@@ -19,35 +19,27 @@ export class PersonnelComponent implements OnInit {
       this.checkStatus(); // Appelle la fonction de vérification à intervalles réguliers
     }, dailyCheckTime);
 
-    // Appelle la vérification immédiatement lors du chargement de la page
+    // C'est pour vérifier immédiatement lors du chargement de la page
     this.checkStatus();
   }
 
   checkStatus() {
-    this.getUsersCount(); // Fonction pour obtenir le nombre total d'utilisateurs
-  }
-
-  getUsersCount() {
-    this.luccaApiService.getUsers().subscribe({
-      next: (response: any) => {
-        // Vérifiez si 'data' est défini et a des éléments (assurance en cas de changement de structure)
-        const totalUsers = response.data.items.length; // obtenir le nombre total d'utilisateurs
-
-        this.luccaApiService.getAbsentsCount().subscribe({
-          next: (absent: any) => {
-            const AbsentsNbr = absent.data.items.length;
-
-            // Mettez à jour le nombre de personnes présentes
-            this.numPresentToday = totalUsers ;
-          },
-          error: (error) => {
-            console.error('Erreur lors de la récupération des absences', error);
-          }
-        });
+    const locationId = 4;
+    const today = new Date().toISOString().split('T')[0];
+  
+    this.CollabService.getOccupanciesCount(locationId, today, today).subscribe({
+      next: (response) => {
+        console.log('Réponse de l\'API :', response);
+  
+        const Present= response.data.items.length;
+        console.log('Nombre de personnes présentes aujourd\'hui :', Present);
+  
+        this.numPresentToday = Present;
       },
       error: (error) => {
-        console.error('Erreur lors de la récupération des utilisateurs', error);
+        console.error('Erreur lors de la récupération des données d\'occupation', error);
       }
     });
   }
+    
 }
