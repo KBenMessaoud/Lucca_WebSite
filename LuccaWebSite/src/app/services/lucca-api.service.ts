@@ -17,7 +17,9 @@ export class LuccaApiService {
   }
 
   //Liste des absents
+  
   getAbsentsCount(): Observable<any> {
+
     return this.http.get(`${this.apiUrl}/v3/userdates`);
   }
 

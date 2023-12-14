@@ -21,12 +21,12 @@ export class NouveauxArrivantsComponent implements OnInit {
   loadNouveauxArrivants(): void {
     this.luccaApiService.getUsers().subscribe({
       next: (response) => {
-        // On s'assure que 'items' est bien présent dans 'data'
+   // On s'assure que 'items' est bien présent dans 'data'
         if (response && response.data && response.data.items) {
           // On extrait le tableau 'items' de la réponse de l'API
           this.nouveauxArrivants = response.data.items;
           // On limite le tableau à 5 élémentss
-          this.nouveauxArrivants = this.nouveauxArrivants.slice(0, 4);
+          this.nouveauxArrivants = this.nouveauxArrivants.slice(0, 2);
         }
       },
       error: (error) => {

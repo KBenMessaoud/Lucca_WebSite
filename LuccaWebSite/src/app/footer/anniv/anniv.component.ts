@@ -14,15 +14,15 @@ export class AnnivComponent implements OnInit{
   
 
   anniv1 = [
-    {photo: "../../../assets/anniv.png",nom: 'A', date: "01/01/1999"},
-    {photo: "../../../assets/anniv.png",nom: 'B', date: "01/01/1999"},
-    {photo: "../../../assets/anniv.png",nom: 'C', date: "01/01/1999"},
-    {photo: "../../../assets/anniv.png",nom: 'D', date: "01/01/1999"},
-    {photo: "../../../assets/anniv.png",nom: 'E', date: "01/01/1999"},
-    {photo: "../../../assets/anniv.png",nom: 'A', date: "01/01/1999"},
-    {photo: "../../../assets/anniv.png",nom: 'B', date: "01/01/1999"},
-    {photo: "../../../assets/anniv.png",nom: 'C', date: "01/01/1999"},
-    {photo: "../../../assets/anniv.png",nom: 'D', date: "01/01/1999"}
+    {photo: "../../../assets/anniv.png",nom: 'Mustafaa X', date: "21/08/1995"},
+    {photo: "../../../assets/anniv.png",nom: 'Karim X', date: "03/03/2009"},
+    {photo: "../../../assets/anniv.png",nom: 'Albane X', date: "15/12/2007"},
+    {photo: "../../../assets/anniv.png",nom: 'Adam X', date: "01/01/2005"},
+    {photo: "../../../assets/anniv.png",nom: 'Mouhamed X', date: "01/01/1939"},
+    {photo: "../../../assets/anniv.png",nom: 'François X', date: "01/01/1969"},
+    {photo: "../../../assets/anniv.png",nom: 'Juliette X', date: "01/01/1999"},
+    {photo: "../../../assets/anniv.png",nom: 'Mario et Juliette', date: "11/01/1999"},
+    {photo: "../../../assets/anniv.png",nom: 'Lucca Nom', date: "01/01/1999"}
   ];
 
   nbPage: number = Math.floor(this.anniv1.length/2)+(1*+!(this.anniv1.length%2===0));
