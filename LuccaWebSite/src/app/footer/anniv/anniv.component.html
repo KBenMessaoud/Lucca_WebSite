@@ -1,24 +1,24 @@
 <div class="anniv-container">
     <div class="anniv-title">Anniversaires</div>
     
-    <ul class="anniv-list" *ngFor="let i of [].constructor(nbPage); let j = index" >
+    <ul class="anniv-list" *ngFor="let i of [].constructor(nbPage1); let j = index" >
       <!-- Ici, nous utilisons *ngFor pour boucler sur chaque page et l'afficher -->
       
       <ng-container *ngIf="j === currentPage">
        <!-- On n'affiche que pour la page actuelle -->
 
-          <div class="anniv-list-item" *ngFor="let anniv of getItemPage(j); let a = index">
+          <div class="anniv-list-item" *ngFor="let anniv of getItemPage1(j); let a = index">
           <!-- Ici, nous utilisons *ngFor pour boucler sur chaque anniversaire de la page et l'afficher -->
 
             <!-- L'ajout d'un div avec une taille max permet de faire varier la taille de 
               l'image en fonction de l'espace disponible
               On créer également un espace entre ce conteneur et la liste-->
-            <div style="max-width:100px; margin-right: 35px">
+            <div style="max-width:7em; margin-right: 5px">
               <img src="../../../assets/anniv.png" alt="photo d'anniversaire">
             </div>
             
             <ul class="items">
-              <li>{{anniv.nom}} </li>
+              <li>{{ anniv.nom }} </li>
               <li>{{anniv.date}}</li>
             </ul>
 
@@ -30,8 +30,8 @@
     
     <!-- Pagination -->
     <div class="pagination">
-      <ng-container *ngIf="nbPage>1">
-        <span class="dot" *ngFor="let anniv of [].constructor(nbPage); let i = index" [class.active]="i === currentPage"></span>
+      <ng-container *ngIf="nbPage1>1">
+        <span class="dot" *ngFor="let anniv of [].constructor(nbPage1); let i = index" [class.active]="i === currentPage"></span>
       </ng-container>
     </div>
   </div>
