@@ -47,12 +47,14 @@
   
   // Titre de la section
   .visiteurs-title {
-    font-size: 2em; 
-    color: orangered; 
-    margin-bottom: 5px;
+    font-size: 3.5vw; 
+    font-family: 'Source Sans 3', sans-serif;
+    color:#00333D;
+    margin: 2%;
+    margin-top: 3%;
     flex-shrink: 0;
     font-weight: bold;
-    text-align: center;
+    text-align: left;
   }
   
   // Liste des visiteurs

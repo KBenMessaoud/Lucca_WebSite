@@ -1,5 +1,5 @@
 <div class="visiteurs-container">
-  <div class="visiteurs-title">Visiteurs de la journée</div>
+  <div class="visiteurs-title">Visiteurs</div>
   <ul class="visiteurs-list">
     <!-- Ici, nous utilisons *ngFor pour boucler sur chaque visiteur et l'afficher -->
     <li class="visiteurs-list-item" *ngFor="let visiteur of visiteurs; let i = index" [class.active]="i === currentSlideIndex">
