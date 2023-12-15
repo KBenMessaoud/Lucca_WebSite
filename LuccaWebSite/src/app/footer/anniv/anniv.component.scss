@@ -5,8 +5,7 @@ ul {
   }
   
   li {
-    background-color: #f0f0f0;
-    padding: 0.5em 1em;
+    padding: 1%;
     margin-bottom: 0.25em;
     border-radius: 0.25em;
   }
@@ -17,12 +16,10 @@ ul {
     border-radius: 20px;
     background-color: #fff; 
     padding: 1%;
-    padding-bottom: 0px; 
-    color: #333; // couleur de texte générale
-    font-size: 1em; // taille de texte générale
+    // color: #333; // couleur de texte générale
+    // font-size: 1em; // taille de texte générale
     display: flex;
     flex-direction: column;
-    
     height: 100%;
     width:100%;
     
@@ -100,4 +97,19 @@ ul {
     .dot.active {
       background-color: #717171;
     }
+  }
+
+  .nom{
+    font-family: 'Source Sans 3', sans-serif;
+    color: #E06029;
+    font-size: 1.7vw;
+    margin: 1%;
+    line-height: 0.9;
+
+  }
+
+  .date{
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 1.2vw;
+    line-height: 0.9;
   }
