@@ -38,7 +38,7 @@ export class J2Component implements OnInit {
     } else if (isSunday(addDays(currentDate,3))) {
       currentDate = addDays(currentDate, 5);
     } else if (isMonday(addDays(currentDate,3))) {
-      currentDate = addDays(currentDate, 4);
+      currentDate = addDays(currentDate, 5);
     } else {
       currentDate = addDays(currentDate, 3);
     }

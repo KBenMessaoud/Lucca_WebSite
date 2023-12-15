@@ -24,7 +24,7 @@ export class J1Component implements OnInit {
   }
 
   updateDate() {
-    this.date = this.calculateDate(4);
+    this.date = this.calculateDate(2);
     this.formatDay();
   }
 
@@ -37,7 +37,7 @@ export class J1Component implements OnInit {
     if (isSaturday(addDays(currentDate,2))) {
       currentDate = addDays(currentDate, 4);
     } else if (isSunday(addDays(currentDate,2))) {
-      currentDate = addDays(currentDate, 3);
+      currentDate = addDays(currentDate, 4);
     } else {
       currentDate = addDays(currentDate, 2);
     }
