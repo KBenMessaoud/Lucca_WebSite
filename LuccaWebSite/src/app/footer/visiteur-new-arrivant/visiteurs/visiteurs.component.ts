@@ -31,7 +31,7 @@ export class VisiteursComponent implements OnInit {
             return a.lastVisitedAt - b.lastVisitedAt;
           });
           // On prend les 10 premiers éléments
-          this.visiteurs = this.visiteurs.slice(6, 10);
+          this.visiteurs = this.visiteurs.slice(0,2);
         }
       },
       error: (error) => {

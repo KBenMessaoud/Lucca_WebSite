@@ -3,8 +3,8 @@
   box-shadow: 0px 0px 15px 0.05px #838383;
   border-radius: 20px;
   background-color: #fff; 
-  padding: 8px;
-  padding-bottom: 0px; 
+  padding: 0.9%;
+  padding-bottom: 0%; 
   color: #333; // couleur de texte générale
   font-size: 16px; // taille de texte générale
   display: flex;
@@ -20,6 +20,7 @@
     margin-bottom: 5px;
     flex-shrink: 0;
     font-weight: bold;
+    text-align: center;
   }
   
 
@@ -34,7 +35,7 @@
   // Élément de liste individuel pour les nouveaux arrivants
   .nouveaux-arrivants-item {
     background-color: #f0f0f0;
-    padding: 8px;
+    padding: 0.2%;
     border-radius: 5px;
     margin-bottom: 8px;
     font-weight: bold;
