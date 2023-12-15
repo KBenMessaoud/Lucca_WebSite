@@ -8,7 +8,8 @@ import { Observable } from 'rxjs';
 export class LuccaApiService {
   // TODO: base url in environment file
   private apiUrl = 'http://localhost:3000/api'; // based URL of proxy backend
-  private http = inject(HttpClient);
+ 
+  constructor(private http: HttpClient) {}
 
   // Méthode existante pour obtenir les visiteurs
   // Méthode pour obtenir la liste des utilisateurs
@@ -16,7 +17,6 @@ export class LuccaApiService {
     return this.http.get(`${this.apiUrl}/v3/users`);
   }
 
-  
 
   // Méthode existante pour obtenir les nouveaux arrivants
   getNouveauxArrivants(): Observable<any> {
@@ -29,7 +29,7 @@ export class LuccaApiService {
     const params = new HttpParams().set('fields', 'name');
 
     // Ajout des params à la requête GET
-    return this.http.get(`${this.apiUrl}users`, { params: params });
+    return this.http.get(`${this.apiUrl}/users`, { params: params });
   }
 
 

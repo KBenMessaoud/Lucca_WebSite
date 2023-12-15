@@ -16,6 +16,10 @@ exec('node server/index.js', (error, stdout, stderr) => {
 });
 export default {
   '/api/': {
-    target: 'http://localhost:3200',
-  }
+    target: 'http://localhost:3000',
+  },
+  '/work-locations/api/schedule/available-work-locations/': {
+    target: 'http://localhost:3000',
+  },
+
 }

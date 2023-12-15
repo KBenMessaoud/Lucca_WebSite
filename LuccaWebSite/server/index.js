@@ -24,6 +24,12 @@ fastify.get('/api/*', async (request, reply) => {
   return result.json()
 });
 
+fastify.get('/work-locations/api/schedule/available-work-locations/*', async (request, reply) => {
+  process.stdout.write('proxi '+ apiUrl+request.url);
+  const result= await fetch(apiUrl+request.url, {method:'GET', headers}) ;
+  return result.json()
+});
+
 fastify.get('/', async (request, reply) => {
   return { hello: 'world' }
 })
