@@ -5,9 +5,9 @@ ul {
   
   li {
     background-color: #f0f0f0;
-    padding: 8px 16px;
-    margin-bottom: 4px;
-    border-radius: 4px;
+    padding: 0.5em 1em;
+    margin-bottom: 0.25em;
+    border-radius: 0.25em;
   }
   
 // Définition de la base du conteneur pour les anniversaires
@@ -18,7 +18,7 @@ ul {
     padding: 10px;
     padding-bottom: 0px; 
     color: #333; // couleur de texte générale
-    font-size: 16px; // taille de texte générale
+    font-size: 1em; // taille de texte générale
     display: flex;
     flex-direction: column;
     
@@ -56,7 +56,7 @@ ul {
   
   // Eléments de chaque anniversaire (Photo + nom et date)
   .anniv-list-item {
-    padding: 10px;
+    padding: 10/16em;
     flex-grow: 1;
     display: flex;
     align-items: center;
@@ -64,9 +64,7 @@ ul {
   }
 
     //Permet de libérer l'espace que prendrait un éléments vide (quand seulement 3 éléments)
-  .anniv-list-item:empty {
-    display: none;
-  }
+  
   
   img{
     flex-shrink: 2;
