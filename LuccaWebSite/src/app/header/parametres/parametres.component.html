@@ -4,11 +4,12 @@
 		<span aria-hidden="true" class="lucca-icon icon-settingsGear" size="XXL"></span>
 		<span class="u-mask">Parametres</span>
 	</button>
+
 	<div class="settings-menu" *ngIf="showSettingsMenu">
 	  <label for="siteLocation">Site:</label>
 	  <select id="siteLocation" [(ngModel)]="selectedSiteLocation" (change)="onOptionSelected($event)">
 		<option value="Nantes">Nantes</option>
-		<option value="Nantes2">Nantes2</option>
+		<option value="Nantes2">Nantes 2</option>
 		<option value="Paris">Paris</option>
 		<option value="Marseille">Marseille</option>
 		<option value="Barcelone">Barcelone</option>

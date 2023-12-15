@@ -5,17 +5,17 @@
   flex-direction: column;
   align-items: center;
   height: 100%;
-  width: 85.9%;
+  width: 100%;
   padding: 0.1px;
   box-shadow: 0px 0px 15px 0.05px #838383;
   border-radius: 20px;
   background-color: white;
-  color: orangered;
-  
+  color: #E06029;
+  padding:  15%;
 }
 
 .un {
-  margin-top: 4em;
+  margin-top: 2.3vw;
   height: 50%; /* Ajustez la hauteur en fonction de vos besoins */
   text-align: center;
   display: flex;
@@ -29,22 +29,26 @@
   display: flex;
   flex-direction: column;
   justify-content: center; 
-  margin-top: 2em;
+  margin-top: 3vw;
   align-items: center;
 }
 
 .nombre-present {
-  font-size: 11em;
+  font-size: 12vw;
+  font-family: 'Source Sans 3', sans-serif;
   font-weight: bold;
-  color: orangered;
+  color: #E06029;
   justify-content: center; 
-  margin-top: 0.009em;
   margin-bottom: 0.1em;
 }
 
 .personnes-text {
-  font-size: 1.9em;
+  position:relative;
+  bottom: 5%;
+  font-size: 2.2vw;
+  line-height: 0.75;
   font-weight: bold;
-  color: rgb(19, 29, 53);
+  font-family: 'Source Sans 3', sans-serif;
+  color:#00333D;
   justify-content: center; 
 }
