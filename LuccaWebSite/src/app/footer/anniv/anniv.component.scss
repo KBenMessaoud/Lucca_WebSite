@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@700&display=swap');
 ul {
     list-style: none;
     padding: 0;
@@ -15,7 +16,7 @@ ul {
     box-shadow: 0px 0px 15px 0.05px #838383;
     border-radius: 20px;
     background-color: #fff; 
-    padding: 10px;
+    padding: 1%;
     padding-bottom: 0px; 
     color: #333; // couleur de texte générale
     font-size: 1em; // taille de texte générale
@@ -30,9 +31,11 @@ ul {
   
   // Titre de la section
   .anniv-title {
-    font-size: 2em; 
-    color: #00545C; 
-    margin-bottom: 0.5%;
+    font-size: 3.5vw; 
+    font-family: 'Source Sans 3', sans-serif;
+    color:#00333D;
+    margin: 2%;
+    margin-top: 3%;
     flex-shrink: 0;
     font-weight: bold;
   }
