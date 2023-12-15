@@ -1,8 +1,10 @@
 @forward '@lucca-front/scss/src/components/actionIcon';
 /* Styles SCSS pour le logo */
 .toolbar {
-    background-color: #f0f0f0; /* Couleur de fond de la barre d'outils, vous pouvez la personnaliser */
+    background-color: #ffffff; 
+    font-family: 'Source Sans 3', sans-serif;
     height: 50px; /* Hauteur de la barre d'outils, ajustez selon vos besoins */
+    width: 10em;
     display: flex;
     align-items: center; /* Pour centrer verticalement les éléments */
   }
@@ -16,13 +18,14 @@
   img.icon-param {
     display: inline-block; /* Pour afficher en ligne avec le spacer */
   }
+
 .icon-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     cursor: pointer;
     position: relative;
-    font-family: 'Source Sans'
+    font-family: 'Source Sans 3', sans-serif;
   }
 
   .spacer {
@@ -40,11 +43,14 @@
     background-color: #ffffff;
     border: 1px solid #ccc;
     border-radius: 4px;
+    
     display: none;
+    font-family: 'Source Sans 3', sans-serif;
   }
   
   .settings-menu li {
     padding: 10px;
+    font-family: 'Source Sans 3', sans-serif;
   }
   
   /* Afficher le menu des paramètres lorsque showSettingsMenu est vrai */
