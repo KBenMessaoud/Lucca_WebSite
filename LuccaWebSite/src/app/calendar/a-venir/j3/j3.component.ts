@@ -1,7 +1,7 @@
 // j3.component.ts
 import { Component, OnInit } from '@angular/core';
 import { DatePipe } from '@angular/common';
-import { addDays, isSaturday, isMonday, isTuesday, isSunday, startOfDay } from 'date-fns';
+import { addDays, isSaturday, isMonday, isTuesday, isSunday, startOfDay, isWednesday } from 'date-fns';
 
 @Component({
   selector: 'app-j3',
@@ -40,7 +40,9 @@ export class J3Component implements OnInit {
       currentDate = addDays(currentDate, 6);
     }else if (isTuesday(addDays(currentDate,4))) {
       currentDate = addDays(currentDate, 6);
-    }  else {
+    }  else if (isWednesday(addDays(currentDate,4))) {
+      currentDate = addDays(currentDate, 6);
+    }else {
       currentDate = addDays(currentDate, 4);
     }
 

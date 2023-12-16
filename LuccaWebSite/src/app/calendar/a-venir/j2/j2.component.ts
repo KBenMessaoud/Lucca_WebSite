@@ -1,7 +1,7 @@
 // j2.component.ts
 import { Component, OnInit } from '@angular/core';
 import { DatePipe } from '@angular/common';
-import { addDays,isMonday, isSaturday, isSunday, startOfDay } from 'date-fns';
+import { addDays,isMonday, isSaturday, isSunday,isTuesday, startOfDay } from 'date-fns';
 
 @Component({
   selector: 'app-j2',
@@ -39,7 +39,9 @@ export class J2Component implements OnInit {
       currentDate = addDays(currentDate, 5);
     } else if (isMonday(addDays(currentDate,3))) {
       currentDate = addDays(currentDate, 5);
-    } else {
+    }else if (isTuesday(addDays(currentDate,3))) {
+      currentDate = addDays(currentDate, 5);
+    }else {
       currentDate = addDays(currentDate, 3);
     }
 

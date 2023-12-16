@@ -26,8 +26,9 @@ import { J2Component } from './calendar/a-venir/j2/j2.component';
 import { J3Component } from './calendar/a-venir/j3/j3.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-// Import du service LuccaApiService
+// Import des différents services
 import { LuccaApiService } from './services/lucca-api.service';
+//import { GoogleCalendarService } from './services/google-calendar.service';
 import { CollabService } from './services/collab.service';
 import { ParametresComponent } from './header/parametres/parametres.component';
 import { HeureActuelleComponent } from './header/heure-actuelle/heure-actuelle.component';
@@ -70,6 +71,7 @@ registerLocaleData(localeFr, 'fr');
 
     LuccaApiService,// Ajoutez le service LuccaApiService aux providers
     CollabService,
+    //GoogleCalendarService,
     { provide: LOCALE_ID, useValue: 'fr' }
   ],
   bootstrap: [AppComponent, AVenirComponent, J1Component, J2Component, J3Component, DemainComponent, AujComponent]
