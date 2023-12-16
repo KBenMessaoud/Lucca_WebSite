@@ -1,108 +1,56 @@
+// src/app/footer/anniv/anniv.component.ts
 import { Component, OnInit } from '@angular/core';
 import { LuccaApiService } from '../../services/lucca-api.service';
+import { UserBirthday, ApiResponse } from '../../services/interface'; // Update the import path as needed
 
 @Component({
   selector: 'app-anniv',
   templateUrl: './anniv.component.html',
   styleUrls: ['./anniv.component.scss']
 })
-export class AnnivComponent implements OnInit{
-  anniversaires: any[] = [];
-  photos: any[] = [];
+export class AnnivComponent implements OnInit {
+  anniversaires: UserBirthday[] = [];
   currentPage: number = 0;
-  nbPage: number = Math.floor(this.anniversaires.length/2)+(1*+!(this.anniversaires.length%2===0));
-
+  nbPage: number = 0;
 
   constructor(private luccaApiService: LuccaApiService) { }
 
-
-  anniv1 = [
-    {photo: "../../../assets/anniv.png",nom: 'Mustafaa X', date: "21/08/1995"},
-    {photo: "../../../assets/anniv.png",nom: 'Karim X', date: "03/03/2009"},
-    {photo: "../../../assets/anniv.png",nom: 'Albane X', date: "15/12/2007"},
-    {photo: "../../../assets/anniv.png",nom: 'Adam X', date: "01/01/2005"},
-    {photo: "../../../assets/anniv.png",nom: 'Mouhamed X', date: "01/01/1939"},
-    {photo: "../../../assets/anniv.png",nom: 'François X', date: "01/01/1969"},
-    {photo: "../../../assets/anniv.png",nom: 'Juliette X', date: "01/01/1999"},
-    {photo: "../../../assets/anniv.png",nom: 'Mario et Juliette', date: "11/01/1999"},
-    {photo: "../../../assets/anniv.png",nom: 'Lucca Nom', date: "01/01/1999"}
-  ];
-
-  nbPage1: number = Math.floor(this.anniv1.length/2)+(1*+!(this.anniv1.length%2===0));
-  
-
-  
-
-
-  /*On affiche 2 éléments au plus par page.
-  Cette méthode permet de récupérer les éléments qui seront afficher sur la page i*/
-  getItemPage1(i: number): any[] {
-    let anniv : any[] = [];
-    if(1+2*i>=this.anniv1.length){
-      for(let j=0;j<this.anniv1.length%2;j++){
-        anniv[j] = {nom: this.anniv1[j+2*i].nom, date: this.anniv1[j+2*i].date};
-      }
-    }
-    else{
-      for(let j=0;j<2;j++){
-        anniv[j] = {nom: this.anniv1[j+2*i].nom, date: this.anniv1[j+2*i].date};
-      }
-    }
-    return anniv;
-
+  ngOnInit(): void {
+    const startDate = '2023-12-18'; // Modify as needed
+    const endDate = '2023-12-22';   // Modify as needed
+    this.loadAnniversaires(startDate, endDate);
+    setInterval(() => this.goToNextSlide(), 3000);
   }
 
-  getItemPage(i: number): any[] {
-    let anniv : any[] = [];
-    if(1+2*i>=this.anniversaires.length){
-      for(let j=0;j<this.anniversaires.length%2;j++){
-        anniv[j] = {nom: this.anniversaires[j+2*i].nom, date: this.anniversaires[j+2*i].date};
-      }
-    }
-    else{
-      for(let j=0;j<2;j++){
-        anniv[j] = {nom: this.anniversaires[j+2*i].nom, date: this.anniversaires[j+2*i].date};
-      }
-    }
-    return anniv;
+  // loadAnniversaires(startDate: string, endDate: string): void {
+  //   this.luccaApiService.getAnniversaires(startDate, endDate).subscribe({
+  //     next: (response: ApiResponse) => {
+  //       this.anniversaires = response.data.items;
+  //       this.nbPage = Math.ceil(this.anniversaires.length / 2);
+  //     },
+  //     error: (error) => console.error('Error fetching birthdays:', error)
+  //   });
+  // }
 
-  }
-
-
-
-  loadAnniversaires(): void {
-    this.luccaApiService.getUsers().subscribe({
-      next: (response) => {
-        // On s'assure que 'items' est bien présent dans 'data'
-        if (response && response.data && response.data.items) {
-          // On extrait le tableau 'items' de la réponse de l'API
-          this.anniversaires = response.data.items;
-          // On trie la liste par date de visite
-          this.anniversaires.sort((a, b) => {
-            return a.lastVisitedAt - b.lastVisitedAt;
-          });
-          // On prend les 10 premiers éléments
-          this.anniversaires = this.anniversaires.slice(6, 10);
-        }
+  loadAnniversaires(startDate: string, endDate: string): void {
+    this.luccaApiService.getAnniversaires(startDate, endDate).subscribe({
+      next: (response: ApiResponse) => {
+        console.log('API Response:', response); // Add this line
+        this.anniversaires = response.data.items;
+        this.nbPage = Math.ceil(this.anniversaires.length / 2);
       },
-      error: (error) => {
-        console.error('Erreur lors de la récupération des visiteurs:', error);
-      }
+      error: (error) => console.error('Error fetching birthdays:', error)
     });
   }
+  
 
-  ngOnInit(): void {
-    //this.loadAnniversaires();
-    setInterval(() => this.goToNextSlide(), 3000);
-   
+  getItemPage(i: number): UserBirthday[] {
+    const startIndex = i * 2;
+    const endIndex = startIndex + 2;
+    return this.anniversaires.slice(startIndex, endIndex);
   }
 
   goToNextSlide(): void {
-    this.currentPage = (this.currentPage + 1) % this.nbPage1;
-
+    this.currentPage = (this.currentPage + 1) % this.nbPage;
   }
-
-  
-
-
 }

@@ -1,6 +1,36 @@
 <div class="container">
     <div class="Auj">
-        <p class="Title">Aujourd'hui</p>
-        <p class="Title">{{ date | date: 'dd/MM' : 'fr' }}</p>
+      <h2 class="Title">Aujourd'hui {{ date | date: 'dd/MM/yyyy' }}</h2>
+      
+      <!-- Bouton pour afficher/masquer le formulaire d'ajout d'événement -->
+      <button (click)="toggleAddEventForm()" class="toggle-form-btn">
+        {{ showAddEventForm ? 'Masquer le formulaire' : 'Ajouter un événement' }}
+      </button>
+  
+      <!-- Formulaire d'ajout d'événement, affiché conditionnellement -->
+      <div [class.show]="showAddEventForm" class="add-event-form">
+        <form (submit)="addEvent()">
+          <input type="text" [(ngModel)]="newEventTitle" placeholder="Titre de l'événement" name="title" required>
+          <input type="time" [(ngModel)]="newEventTime" name="time" required>
+          <textarea [(ngModel)]="newEventDescription" placeholder="Description de l'événement" name="description"></textarea>
+          <button type="submit" class="submit-btn">Ajouter</button>
+        </form>
+      </div>
+  
+      <!-- Liste des événements existants -->
+      <ul class="event-list">
+        <li *ngFor="let event of events" [class.hidden]="!event.isVisible" class="event-item">
+          <div class="event-info">
+            <h3>{{ event.title }}</h3>
+            <p>Heure : {{ event.time }}</p>
+            <p>{{ event.description }}</p>
+          </div>
+          <div class="event-actions">
+
+            <button (click)="deleteEvent(event.id)" class="delete-btn">Supprimer</button>
+          </div>
+        </li>
+      </ul>
     </div>
-</div>
+  </div>
+  
