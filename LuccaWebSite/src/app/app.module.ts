@@ -29,6 +29,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // Import du service LuccaApiService
 import { LuccaApiService } from './services/lucca-api.service';
 import { CollabService } from './services/collab.service';
+//import { CalendService } from './calendar/Calendar_service';
 import { ParametresComponent } from './header/parametres/parametres.component';
 import { HeureActuelleComponent } from './header/heure-actuelle/heure-actuelle.component';
 // Enregistrez la locale française
@@ -70,6 +71,7 @@ registerLocaleData(localeFr, 'fr');
 
     LuccaApiService,// Ajoutez le service LuccaApiService aux providers
     CollabService,
+    //CalendService,
     { provide: LOCALE_ID, useValue: 'fr' }
   ],
   bootstrap: [AppComponent, AVenirComponent, J1Component, J2Component, J3Component, DemainComponent, AujComponent]

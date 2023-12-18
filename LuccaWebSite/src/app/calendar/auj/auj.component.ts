@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CalendarService } from '../Calendar_service';
+import { CalendarService } from '../../services/calendar.service';
 import { CalendarEvent } from '../calendar-event.model';
 import { DatePipe } from '@angular/common';
 
@@ -7,15 +7,15 @@ import { DatePipe } from '@angular/common';
   selector: 'app-auj',
   templateUrl: './auj.component.html',
   styleUrls: ['./auj.component.scss'],
-  providers: [DatePipe]
+ 
 })
 export class AujComponent implements OnInit {
-  events: CalendarEvent[] = [];
-  newEventTitle: string = '';
-  newEventTime: string = '';
+ 
+  
   newEventDescription: string = '';
   date: string;
   showAddEventForm: boolean = false;
+  memes: any[] = [];
 
   constructor(
     private calendarService: CalendarService,
@@ -26,39 +26,19 @@ export class AujComponent implements OnInit {
 
   ngOnInit() {
     this.loadEvents();
+    this.loadMemes();
   }
 
   loadEvents(): void {
     const today = new Date().toISOString().split('T')[0];
-    this.events = this.calendarService.getEventsForDate(today);
+    
   }
 
-  addEvent(): void {
-    const newEvent: CalendarEvent = {
-      id: Math.random().toString(36).substring(2, 9),
-      title: this.newEventTitle,
-      date: new Date().toISOString().split('T')[0],
-      time: this.newEventTime,
-      description: this.newEventDescription,
-      isVisible: true
-    };
-    this.calendarService.addEvent(newEvent);
-    this.events.push(newEvent);
-
-    // Réinitialiser les champs de formulaire
-    this.newEventTitle = '';
-    this.newEventTime = '';
-    this.newEventDescription = '';
+  loadMemes(): void {
+    this.calendarService.getMemes().subscribe((memes) => {
+      this.memes = memes;
+      
+    });
   }
 
-  
-
-  toggleAddEventForm(): void {
-    this.showAddEventForm = !this.showAddEventForm;
-  }
-
-  deleteEvent(eventId: string): void {
-    this.calendarService.deleteEvent(eventId);
-    this.events = this.events.filter(event => event.id !== eventId);
-  }
 }
