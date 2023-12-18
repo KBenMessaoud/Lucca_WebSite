@@ -34,10 +34,10 @@ export class PersonnelComponent implements OnInit {
         this.titre = `People on site`;
       }
       if(`${titre}` == 'Es'){
-        this.titre = `Personalos`;
+        this.titre = `Personas en el sitio`;
       }
       if(`${titre}` == 'De'){
-        this.titre = `ich bin`;
+        this.titre = `Personen vor Ort`;
       }
       
   });

@@ -27,10 +27,10 @@ export class VisiteursComponent implements OnInit {
         this.titre = `Visitors`;
       }
       if(`${titre}` == 'Es'){
-        this.titre = `Personalos`;
+        this.titre = `Visitantes`;
       }
       if(`${titre}` == 'De'){
-        this.titre = `ich bin`;
+        this.titre = `Besucher`;
       }
       
   });

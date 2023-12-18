@@ -105,10 +105,10 @@ export class AnnivComponent implements OnInit{
         this.titre = `Birthdays`;
       }
       if(`${titre}` == 'Es'){
-        this.titre = `Jsp`;
+        this.titre = `Cumpleaños`;
       }
       if(`${titre}` == 'De'){
-        this.titre = `Okk`;
+        this.titre = `Geburtstage`;
       }
       
   });

@@ -27,10 +27,10 @@ this.sharedService.langue$.subscribe((titre) => {
       this.titre = `Staff`;
     }
     if(`${titre}` == 'Es'){
-      this.titre = `Personalos`;
+      this.titre = `Personal`;
     }
     if(`${titre}` == 'De'){
-      this.titre = `ich bin`;
+      this.titre = `Personal`;
     }
     
 });

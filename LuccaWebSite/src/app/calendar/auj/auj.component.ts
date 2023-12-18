@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { addDays, isSaturday, isSunday, startOfDay } from 'date-fns';
+import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
   selector: 'app-auj',
@@ -10,11 +11,27 @@ import { addDays, isSaturday, isSunday, startOfDay } from 'date-fns';
 export class AujComponent  implements OnInit{
   date!: Date;
   formattedDay: string = '';
+  titre : string = "Aujourd'hui";
 
-  constructor(private datePipe: DatePipe) {}
+  constructor(private datePipe: DatePipe, private sharedService: SharedService) {}
 
   ngOnInit() {
     this.updateDate(); // Mettre à jour la date immédiatement
+
+    this.sharedService.langue$.subscribe((titre) => { // On lit la valeur de langue grace au service SharedService
+      if(`${titre}` == 'Fr'){
+        this.titre = `Aujourd'hui`;
+      }
+      if(`${titre}` == 'En'){
+        this.titre = `Today`;
+      }
+      if(`${titre}` == 'Es'){
+        this.titre = `Hoy`;
+      }
+      if(`${titre}` == 'De'){
+        this.titre = `Heute`;
+      }  
+  });
 
     // Utiliser setInterval pour mettre à jour la date toutes les 24 heures
     setInterval(() => {
@@ -54,7 +71,9 @@ export class AujComponent  implements OnInit{
   }
 
   formatDay() {
-    const dayString = this.datePipe.transform(this.date, 'EEEE', 'fr') || '';
-    this.formattedDay = dayString.charAt(0).toUpperCase() + dayString.slice(1);
+      const dayString = this.datePipe.transform(this.date, 'EEEE', 'en') || '';
+      this.formattedDay = dayString.charAt(0).toUpperCase() + dayString.slice(1);
+
+    
   }
 }
