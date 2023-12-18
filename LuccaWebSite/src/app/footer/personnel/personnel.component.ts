@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CollabService } from '../../services/collab.service';
+import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
   selector: 'app-personnel',
@@ -8,8 +9,11 @@ import { CollabService } from '../../services/collab.service';
 })
 export class PersonnelComponent implements OnInit {
   numPresentToday: number = 0; // Initialise la variable pour afficher le nombre de personnes présentes
+  titre: string;
 
-  constructor(private CollabService: CollabService) {}
+  constructor(private CollabService: CollabService, private sharedService: SharedService) {
+    this.titre = 'Personnel';
+  }
 
   ngOnInit() {
     // Planifie l'exécution de la fonction de vérification chaque jour à 8h (en millisecondes)
@@ -21,6 +25,22 @@ export class PersonnelComponent implements OnInit {
 
     // C'est pour vérifier immédiatement lors du chargement de la page
     this.checkStatus();
+
+    this.sharedService.langue$.subscribe((titre) => { // On lit la valeur de lieu grace au service SharedService
+      if(`${titre}` == 'Fr'){
+        this.titre = `Personnes sur le site`;
+      }
+      if(`${titre}` == 'En'){
+        this.titre = `People on site`;
+      }
+      if(`${titre}` == 'Es'){
+        this.titre = `Personalos`;
+      }
+      if(`${titre}` == 'De'){
+        this.titre = `ich bin`;
+      }
+      
+  });
   }
 
   checkStatus() {

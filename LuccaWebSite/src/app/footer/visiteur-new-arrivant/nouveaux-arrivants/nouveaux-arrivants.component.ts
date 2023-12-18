@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LuccaApiService } from '../../../services/lucca-api.service';
-
+import { SharedService } from 'src/app/services/shared.service';
 @Component({
   selector: 'app-nouveaux-arrivants',
   templateUrl: './nouveaux-arrivants.component.html',
@@ -9,13 +9,31 @@ import { LuccaApiService } from '../../../services/lucca-api.service';
 export class NouveauxArrivantsComponent implements OnInit {
   nouveauxArrivants: any[] = [];
   currentSlideIndex = 0;
+   titre: string; // contient le titre du composant
 
-  constructor(private luccaApiService: LuccaApiService) { }
+  constructor(private luccaApiService: LuccaApiService, private sharedService: SharedService) { this.titre = 'personnel'; }
 
   ngOnInit(): void {
     this.loadNouveauxArrivants();
-    // Changez la durée si nécessaire
     setInterval(() => this.goToNextSlide(), 5000);
+
+// On lit la valeur de lieu grace au service SharedService
+
+this.sharedService.langue$.subscribe((titre) => { 
+    if(`${titre}` == 'Fr'){
+      this.titre = `Personnel`;
+    }
+    if(`${titre}` == 'En'){
+      this.titre = `Staff`;
+    }
+    if(`${titre}` == 'Es'){
+      this.titre = `Personalos`;
+    }
+    if(`${titre}` == 'De'){
+      this.titre = `ich bin`;
+    }
+    
+});
   }
 
   loadNouveauxArrivants(): void {

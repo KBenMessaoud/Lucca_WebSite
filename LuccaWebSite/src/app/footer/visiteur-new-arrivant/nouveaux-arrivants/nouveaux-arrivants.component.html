@@ -1,5 +1,5 @@
 <div class="nouveaux-arrivants-container">
-  <div class="nouveaux-arrivants-title">Nouveaux Arrivants</div>
+  <div class="nouveaux-arrivants-title">{{titre}}</div>
   <ul class="nouveaux-arrivants-list">
     <!-- Utilisez 'firstName' et 'lastName' pour afficher le nom complet de l'arrivant -->
     <li class="nouveaux-arrivants-item" *ngFor="let arrivant of nouveauxArrivants; let i = index" [class.active]="i === currentSlideIndex">

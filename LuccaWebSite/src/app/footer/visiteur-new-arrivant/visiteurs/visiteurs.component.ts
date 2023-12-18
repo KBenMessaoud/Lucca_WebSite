@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LuccaApiService } from '../../../services/lucca-api.service';
-
+import { SharedService } from 'src/app/services/shared.service';
 @Component({
   selector: 'app-visiteurs',
   templateUrl: './visiteurs.component.html',
@@ -10,13 +10,30 @@ export class VisiteursComponent implements OnInit {
   visiteurs: any[] = [];
   liste: any[] = [1, 2];
   currentSlideIndex = 0;
+  titre: string;
 
-  constructor(private luccaApiService: LuccaApiService) { }
+  constructor(private luccaApiService: LuccaApiService, private sharedService: SharedService) { this.titre = 'Visiteurs';}
 
   ngOnInit(): void {
     this.loadVisiteurs();
     // Changez la durée si nécessaires
     setInterval(() => this.goToNextSlide(), 4000);
+
+    this.sharedService.langue$.subscribe((titre) => { 
+      if(`${titre}` == 'Fr'){
+        this.titre = `Visiteurs`;
+      }
+      if(`${titre}` == 'En'){
+        this.titre = `Visitors`;
+      }
+      if(`${titre}` == 'Es'){
+        this.titre = `Personalos`;
+      }
+      if(`${titre}` == 'De'){
+        this.titre = `ich bin`;
+      }
+      
+  });
   }
 
   loadVisiteurs(): void {

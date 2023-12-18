@@ -1,15 +1,16 @@
 <div class="visiteurs-container">
-  <div class="visiteurs-title">Visiteurs</div>
+  <div class="visiteurs-title">{{titre}}</div>
+
   <ul class="visiteurs-list">
     <!-- Ici, nous utilisons *ngFor pour boucler sur chaque visiteur et l'afficher -->
     <li class="visiteurs-list-item" *ngFor="let visiteur of visiteurs; let i = index" [class.active]="i === currentSlideIndex">
       <!-- Affichage du nom et du prénom basé sur la réponse de l'API -->
 
         {{ visiteur.name }}
-     
-     <!-- {{ visiteur.lastName }}s {{ visiteur.firstName }}-->
+
     </li>
   </ul>
+  
   <!-- Pagination -->
   <div class="pagination">
     <span class="dot" *ngFor="let visiteur of liste; let i = index" [class.active]="i === currentSlideIndex"></span>
