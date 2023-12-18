@@ -1,6 +1,7 @@
 import {inject, Injectable} from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { ApiResponse } from './interface';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,11 @@ export class LuccaApiService {
     return this.http.get(`${this.apiUrl}/v3/users`);
   }
 
+  // Méthode pour obtenir les données des anniversaires à partir de l'API Lucca
+  getAnniversaires(startDate: string, endDate: string): Observable<ApiResponse> {
+    const url = `${this.apiUrl}/users/birthday?fields=id,name,firstname,lastname,picture.href,department.id,department.name,birthDate,dtcontractstart&startson=${startDate}&endson=${endDate}`;
+    return this.http.get<ApiResponse>(url);
+  }
 
   // Méthode existante pour obtenir les nouveaux arrivants
   getNouveauxArrivants(): Observable<any> {
