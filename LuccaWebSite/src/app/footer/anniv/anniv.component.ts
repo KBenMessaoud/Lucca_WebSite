@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LuccaApiService } from '../../services/lucca-api.service';
-
+import { SharedService } from 'src/app/services/shared.service';
 @Component({
   selector: 'app-anniv',
   templateUrl: './anniv.component.html',
@@ -11,10 +11,12 @@ export class AnnivComponent implements OnInit{
   photos: any[] = [];
   currentPage: number = 0;
   nbPage: number = Math.floor(this.anniversaires.length/2)+(1*+!(this.anniversaires.length%2===0));
+  titre: String;
 
 
-  constructor(private luccaApiService: LuccaApiService) { }
-
+  constructor(private luccaApiService: LuccaApiService, private sharedService: SharedService) {
+    this.titre = new String();
+   }
 
   anniv1 = [
     {photo: "../../../assets/anniv.png",nom: 'Mustafaa X', date: "21/08/1995"},
@@ -95,6 +97,21 @@ export class AnnivComponent implements OnInit{
     //this.loadAnniversaires();
     setInterval(() => this.goToNextSlide(), 3000);
    
+    this.sharedService.langue$.subscribe((titre) => { // On lit la valeur de lieu grace au service SharedService
+      if(`${titre}` == 'Fr'){
+        this.titre = `Anniversaires`;
+      }
+      if(`${titre}` == 'En'){
+        this.titre = `Birthdays`;
+      }
+      if(`${titre}` == 'Es'){
+        this.titre = `Jsp`;
+      }
+      if(`${titre}` == 'De'){
+        this.titre = `Okk`;
+      }
+      
+  });
   }
 
   goToNextSlide(): void {

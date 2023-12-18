@@ -5,9 +5,11 @@
 		<span class="u-mask">Parametres</span>
 	</button>
 
+	<!-- Menu déroulant permettant de changer langue et lieu-->
+
 	<div class="settings-menu" *ngIf="showSettingsMenu">
 	  <label for="siteLocation">Site:</label>
-	  <select id="siteLocation" [(ngModel)]="selectedSiteLocation" (change)="onOptionSelected($event)">
+	  <select id="siteLocation" [(ngModel)]="selectedSiteLocation" (change)="onLieuSelected($event)">
 		<option value="Nantes">Nantes</option>
 		<option value="Nantes2">Nantes 2</option>
 		<option value="Paris">Paris</option>
@@ -17,7 +19,7 @@
 	  </select>
 	  <br>
 	  <label for="language">Langue:</label>
-	  <select id="language" [(ngModel)]="selectedLanguage">
+	  <select id="language" [(ngModel)]="selectedLanguage" (change)="onLanguageSelected($event)"> 
 		<option value="Fr">Fr</option>
 		<option value="En">En</option>
 		<option value="Es">Es</option>

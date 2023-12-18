@@ -12,15 +12,14 @@ export class HeureActuelleComponent {
 
   constructor(private sharedService: SharedService) {
     this.heure = new Date();
-    this.lieu = new String();
-    this.lieu = "Nantes";
+    this.lieu = new String(); // La valeur par défaut de lieu est définie par le service SharedService
 
-    setInterval(() => {
+  setInterval(() => {
       this.heure = new Date();
-    }, 1000); // Mettez à jour l'heure chaque seconde
+    }, 1000); 
   }
     ngOnInit() {
-      this.sharedService.lieu$.subscribe((lieu) => {
+      this.sharedService.lieu$.subscribe((lieu) => { // On lit la valeur de lieu grace au service SharedService
         this.lieu = `${lieu}`;
     });
     }

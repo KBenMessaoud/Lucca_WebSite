@@ -1,52 +1,6 @@
 /* Styles SCSS pour le logo */
-.toolbar {
-    background-color: #f0f0f0; /* Couleur de fond de la barre d'outils, vous pouvez la personnaliser */
-    height: 50px; /* Hauteur de la barre d'outils, ajustez selon vos besoins */
-    display: flex;
-    align-items: center; /* Pour centrer verticalement les éléments */
-  }
-  
+
   img {
     height: auto; /* Pour conserver le rapport hauteur/largeur de l'icône */
-  }
-  
-  
-  
-  img.icon-param {
-    display: inline-block; /* Pour afficher en ligne avec le spacer */
-  }
-.icon-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    cursor: pointer;
-    position: relative;
-  }
-
-  .spacer {
-    flex: 1; /* Espace flexible pour pousser l'icône tout à droite */
-    display: inline-block; /* Pour afficher en ligne avec l'icône */
-    margin-right: 10px; /* Ajoutez une marge pour l'espacement entre l'icône et le spacer */
-  }
-  
-  .settings-menu {
-    list-style: none;
-    padding: 0;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background-color: #ffffff;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    display: none;
-  }
-  
-  .settings-menu li {
-    padding: 10px;
-  }
-  
-  /* Afficher le menu des paramètres lorsque showSettingsMenu est vrai */
-  .icon-container:hover .settings-menu {
-    display: block;
   }
   

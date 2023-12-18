@@ -73,7 +73,10 @@
     font-weight: bold;
   }
     
-
+  .pagination {
+    display: flex;
+    justify-content: center;
+    justify-self: flex-end;
  
 
     .dot {
@@ -89,4 +92,4 @@
     .dot.active {
       background-color: #717171;
     }
-  
+  }
