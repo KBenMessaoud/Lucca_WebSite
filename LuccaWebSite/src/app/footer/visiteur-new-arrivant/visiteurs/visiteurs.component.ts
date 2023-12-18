@@ -34,7 +34,7 @@ export class VisiteursComponent implements OnInit {
           this.visiteurs = this.visiteurs.slice(0,2);
         }
       },
-      error: (error) => {
+      error: (error:any) => {
         console.error('Erreur lors de la récupération des visiteurs:', error);
       }
     });
