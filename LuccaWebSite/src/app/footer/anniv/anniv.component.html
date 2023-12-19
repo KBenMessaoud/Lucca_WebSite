@@ -13,25 +13,20 @@
             <!-- L'ajout d'un div avec une taille max permet de faire varier la taille de 
               l'image en fonction de l'espace disponible
               On créer également un espace entre ce conteneur et la liste-->
+
             <div style="max-width:7em; margin-right: 5px">
               <img src="../../../assets/anniv.png" alt="photo d'anniversaire">
             </div>
             
-            <!--
+            
             <ul class="items">
               <li class="nom">{{ anniv.nom }} </li>
               <li class="date">{{anniv.date}}</li>
             </ul>
 
-            <div style="max-width:7em; margin-right: 5px">
-              <img src="../../../assets/anniv.png" alt="photo d'anniversaire">
-            </div>
-            
-            <ul class="items">
-              <li class="nom">{{ anniv.nom }} </li>
-              <li class="date">{{anniv.date}}</li>
-            </ul>-->
+            <!-- Remplacer le contenue du div "anniv-list-item par le code commenter ci dessous"--> 
 
+            <!--
             <div style="max-width:7em; margin-right: 5px">
               <img [src]="anniv['picture.href']" alt="photo d'anniversaire">
             </div>
@@ -39,9 +34,7 @@
             <ul class="items">
               <li class="nom">{{ anniv.firstname }} {{ anniv.lastname }}</li>
               <li class="date">{{ anniv.birthDate | date: 'dd/MM/yyyy' }}</li>
-            </ul>
-  
-
+            </ul>-->
 
           </div>
 
