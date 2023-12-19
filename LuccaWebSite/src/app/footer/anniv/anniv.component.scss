@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@700&display=swap');
+
 ul {
-    list-style: none;
-    padding: 0;
+    list-style: none; //supprime la
+    padding: 0;       //Supprime le
   }
   
   li {
@@ -16,8 +17,6 @@ ul {
     border-radius: 20px;
     background-color: #fff; 
     padding: 1%;
-    // color: #333; // couleur de texte générale
-    // font-size: 1em; // taille de texte générale
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -61,22 +60,35 @@ ul {
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-
-    //Permet de libérer l'espace que prendrait un éléments vide (quand seulement 3 éléments)
-  
+  }  
   
   img{
-    flex-shrink: 2;
+    flex-shrink: 2;     //On préfère faire rétrécir l'image que faire rétrécir le texte
     border-radius: 50%; //Rend l'image circulaire (si image de base carré)
-    max-width: 100%; //permet de faire varier automatiquement la taille de l'image
+    max-width: 100%;    //permet de faire varier automatiquement la taille de l'image
     height: auto;
   }
 
+  //Correspond à la liste contenant le nom et la date
   .items{
     font-weight: bold;
     border-radius: 5px; //Arrondie les coins
     flex-shrink: 1;
+  }
+
+  .nom{
+    font-family: 'Source Sans 3', sans-serif;
+    color: #E06029;
+    font-size: 1.7vw;
+    margin: 1%;
+    line-height: 0.9;
+
+  }
+
+  .date{
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 1.2vw;
+    line-height: 0.9;
   }
 
   .pagination {
@@ -94,22 +106,10 @@ ul {
       transition: background-color 0.6s ease;
     }
 
+    //Rend le point représentant la page actuelle plus foncé
     .dot.active {
       background-color: #717171;
     }
   }
 
-  .nom{
-    font-family: 'Source Sans 3', sans-serif;
-    color: #E06029;
-    font-size: 1.7vw;
-    margin: 1%;
-    line-height: 0.9;
-
-  }
-
-  .date{
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 1.2vw;
-    line-height: 0.9;
-  }
+  
