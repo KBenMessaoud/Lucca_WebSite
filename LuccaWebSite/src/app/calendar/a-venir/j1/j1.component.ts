@@ -40,18 +40,15 @@ export class J1Component implements OnInit {
     let currentDate = startOfDay(new Date());
 
     // Ajout des jours en évitant les samedis et dimanches
-    if (days > 0) {
-      for (let i = 1; i <= days; i++) {
-        if (isSaturday(addDays(currentDate, 2))) {
-          currentDate = addDays(currentDate, 4); // Si samedi, on ajoute 4 jours pour passer à mercredi
-        } else if (isSunday(addDays(currentDate, 2)) || isMonday(addDays(currentDate, 2))) {
-          currentDate = addDays(currentDate, 4); // Si dimanche ou lundi, on ajoute 4 jours pour passer à mercredi
-        } else {
-          currentDate = addDays(currentDate, 2); // Ajoute deux jours
-        }
-      }
+    if (isSaturday(addDays(currentDate,2))) {
+      currentDate = addDays(currentDate, 4);
+    } else if (isSunday(addDays(currentDate,2))) {
+      currentDate = addDays(currentDate, 4);
+    }  else if (isMonday(addDays(currentDate,2))) {
+      currentDate = addDays(currentDate, 4);
+    }else {
+      currentDate = addDays(currentDate, 2);
     }
-
     return currentDate;
   }
 

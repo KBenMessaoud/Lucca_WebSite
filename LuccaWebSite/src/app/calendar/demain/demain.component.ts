@@ -41,16 +41,12 @@ export class DemainComponent implements OnInit {
     let currentDate = startOfDay(new Date());
 
     // Ajout des jours en évitant les samedis et dimanches
-    if (days > 0) {
-      for (let i = 1; i <= days; i++) {
-        if (isSaturday(addDays(currentDate, 1))) {
-          currentDate = addDays(currentDate, 3); // Si samedi, ajoute 3 jours pour passer au Lundi
-        } else if (isSunday(addDays(currentDate, 1))) {
-          currentDate = addDays(currentDate, 3); // Si dimanche, ajoute 3 jours pour passer à Mardi
-        } else {
-          currentDate = addDays(currentDate, 1); // Ajoute un jour
-        }
-      }
+    if (isSaturday(addDays(currentDate,1))) {
+      currentDate = addDays(currentDate, 3);
+    } else if (isSunday(addDays(currentDate,1))) {
+      currentDate = addDays(currentDate, 3);
+    } else {
+      currentDate = addDays(currentDate, 1);
     }
 
     return currentDate;

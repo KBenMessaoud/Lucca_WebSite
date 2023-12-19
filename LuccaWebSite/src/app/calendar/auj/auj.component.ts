@@ -61,16 +61,12 @@ export class AujComponent implements OnInit {
     let currentDate = startOfDay(new Date());
 
     // Ajout des jours en évitant les samedis et dimanches
-    if (days > 0) {
-      for (let i = 1; i <= days; i++) {
-        if (isSaturday(addDays(currentDate, 0))) {
-          currentDate = addDays(currentDate, 2);
-        } else if (isSunday(addDays(currentDate, 0))) {
-          currentDate = addDays(currentDate, 1);
-        } else {
-          currentDate = addDays(currentDate, 1);
-        }
-      }
+    if (isSaturday(addDays(currentDate,0))) {
+      currentDate = addDays(currentDate, 2);
+    } else if (isSunday(addDays(currentDate,0))) {
+      currentDate = addDays(currentDate, 1);
+    } else {
+      currentDate = addDays(currentDate, 0);
     }
 
     return currentDate;
