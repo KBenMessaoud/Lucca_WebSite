@@ -41,16 +41,16 @@ export class J2Component implements OnInit {
     let currentDate = startOfDay(new Date());
 
     // Ajout des jours en évitant les samedis et dimanches
-    if (days > 0) {
-      for (let i = 1; i <= days; i++) {
-        if (isSaturday(addDays(currentDate, 3)) || isSunday(addDays(currentDate, 3))) {
-          currentDate = addDays(currentDate, 5); // Si samedi ou dimanche, ajoute 5 jours pour passer à vendredi
-        } else if (isMonday(addDays(currentDate, 3)) || isTuesday(addDays(currentDate, 3))) {
-          currentDate = addDays(currentDate, 5); // Si lundi ou mardi, ajoute 5 jours pour passer à vendredi
-        } else {
-          currentDate = addDays(currentDate, 3); // Ajoute trois jours
-        }
-      }
+    if (isSaturday(addDays(currentDate,3))) {
+      currentDate = addDays(currentDate, 5);
+    } else if (isSunday(addDays(currentDate,3))) {
+      currentDate = addDays(currentDate, 5);
+    } else if (isMonday(addDays(currentDate,3))) {
+      currentDate = addDays(currentDate, 5);
+    }else if (isTuesday(addDays(currentDate,3))) {
+      currentDate = addDays(currentDate, 5);
+    }else {
+      currentDate = addDays(currentDate, 3);
     }
 
     return currentDate;
