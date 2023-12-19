@@ -17,10 +17,31 @@
               <img src="../../../assets/anniv.png" alt="photo d'anniversaire">
             </div>
             
+            <!--
             <ul class="items">
               <li class="nom">{{ anniv.nom }} </li>
               <li class="date">{{anniv.date}}</li>
             </ul>
+
+            <div style="max-width:7em; margin-right: 5px">
+              <img src="../../../assets/anniv.png" alt="photo d'anniversaire">
+            </div>
+            
+            <ul class="items">
+              <li class="nom">{{ anniv.nom }} </li>
+              <li class="date">{{anniv.date}}</li>
+            </ul>-->
+
+            <div style="max-width:7em; margin-right: 5px">
+              <img [src]="anniv['picture.href']" alt="photo d'anniversaire">
+            </div>
+            
+            <ul class="items">
+              <li class="nom">{{ anniv.firstname }} {{ anniv.lastname }}</li>
+              <li class="date">{{ anniv.birthDate | date: 'dd/MM/yyyy' }}</li>
+            </ul>
+  
+
 
           </div>
 
