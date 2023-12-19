@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@700&display=swap');
 
 ul {
-    list-style: none; //supprime la
-    padding: 0;       //Supprime le
+    list-style: none; 
+    padding: 0;       
   }
   
   li {
@@ -34,6 +34,7 @@ ul {
     margin-top: 3%;
     flex-shrink: 0;
     font-weight: bold;
+    text-align: center;
   }
   
   //L'ensemble des anniversaires affiché sur la page
