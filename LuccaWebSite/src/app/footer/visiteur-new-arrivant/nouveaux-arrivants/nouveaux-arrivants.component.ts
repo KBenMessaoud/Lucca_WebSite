@@ -19,7 +19,7 @@ export class NouveauxArrivantsComponent implements OnInit {
 
   // Constructeur du composant
   constructor(private luccaApiService: LuccaApiService, private sharedService: SharedService) { 
-    this.titre = 'personnel'; // Initialisation du titre
+    this.titre = 'Nouveaux Arrivants'; // Initialisation du titre
   }
 
   // Méthode s'exécutant à l'initialisation du composant
@@ -30,10 +30,10 @@ export class NouveauxArrivantsComponent implements OnInit {
     // Abonnement au service SharedService pour gérer le changement de langue
     this.sharedService.langue$.subscribe((titre) => { 
       // Mise à jour du titre selon la langue choisie
-      this.titre = titre === 'Fr' ? 'Personnel' : 
-                   titre === 'En' ? 'Staff' :
-                   titre === 'Es' ? 'Personal' :
-                   titre === 'De' ? 'Personal' : this.titre;
+      this.titre = titre === 'Fr' ? 'Nouveaux Arrivants' : 
+                   titre === 'En' ? 'New Arrivals' :
+                   titre === 'Es' ? 'Recién Llegados' :
+                   titre === 'De' ? 'Neuankömmlinge' : this.titre;
     });
   }
 
